@@ -1,30 +1,4 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="./favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		
-		<link href="./internal/immutable/assets/0.BcZ81Riz.css" rel="stylesheet">
-		<link href="./internal/immutable/assets/2.DfELQJHK.css" rel="stylesheet">
-		<link rel="modulepreload" href="./internal/immutable/entry/start.D5K_UpPt.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/DwMAuGg3.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/BPfIZAQc.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/HjuvhRRk.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/DPzItkUM.js">
-		<link rel="modulepreload" href="./internal/immutable/entry/app.faz2Ps20.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/BwgnPMQ_.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/MPnh01c1.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/DqMfp86w.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/DjUf4AA-.js">
-		<link rel="modulepreload" href="./internal/immutable/nodes/0.CoK-LNmz.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/Dt_IPidg.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/BlENjVIk.js">
-		<link rel="modulepreload" href="./internal/immutable/nodes/2.wdHbFjuZ.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/Bapk2ZjP.js"><!--1uha8ag--><meta name="description" content="portfolio site of ezio4df"/><!----><title>Home</title>
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents"><!--[--><!--[--><!----><div class="layout-background-container svelte-12qhfyh"><canvas id="quantum-particles-canvas" class="quantum-particles-canvas svelte-12qhfyh"></canvas> <div class="background-overlay svelte-12qhfyh"></div></div> <div class="app svelte-12qhfyh"><div class="navbar-spacer svelte-jfirkk"></div> <nav class="svelte-jfirkk"><div class="nav-container svelte-jfirkk"><div class="logo svelte-jfirkk">ezio4df</div> <ul class="nav-links svelte-jfirkk"><!--[--><li class="svelte-jfirkk"><a href="#" data-nav-link="home" class="active svelte-jfirkk">Home</a></li><li class="svelte-jfirkk"><a href="#" data-nav-link="projects" class="svelte-jfirkk">Projects</a></li><li class="svelte-jfirkk"><a href="#" data-nav-link="timeline" class="svelte-jfirkk">Timeline</a></li><li class="svelte-jfirkk"><a href="#" data-nav-link="skills" class="svelte-jfirkk">Skills</a></li><li class="svelte-jfirkk"><a href="#" data-nav-link="about" class="svelte-jfirkk">About</a></li><li class="svelte-jfirkk"><a href="#" data-nav-link="contact" class="svelte-jfirkk">Contact</a></li><!--]--> <div class="underline underline-hidden svelte-jfirkk" style="width: 0; left: 0;"></div></ul></div></nav><!----> <main class="svelte-12qhfyh"><!----><section id="home" class="svelte-1h9oe6u"><div class="content svelte-1h9oe6u"><h1>ezio4df</h1> <h2 class="svelte-1h9oe6u">Student, ML researcher, Programmer</h2> <ul class="socials svelte-1h9oe6u"><li class="svelte-1h9oe6u"><a href="#" class="svelte-1h9oe6u">Github</a></li> <li class="svelte-1h9oe6u"><a href="#" class="svelte-1h9oe6u">Kaggle</a></li> <li class="svelte-1h9oe6u"><a href="#" class="svelte-1h9oe6u">StackOverflow</a></li> <li class="svelte-1h9oe6u"><a href="#" class="svelte-1h9oe6u">Email</a></li></ul></div></section><!----> <section id="projects" class="svelte-nz99jg"><div class="content"><h1>Projects</h1> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum omnis quos voluptates. Accusantium amet
+import{f as u,a}from"../chunks/DqMfp86w.js";import"../chunks/Dt_IPidg.js";import{O as m,R as n,L as l,$ as p,a4 as d}from"../chunks/BPfIZAQc.js";import{h as c}from"../chunks/Bapk2ZjP.js";import{d as q}from"../chunks/MPnh01c1.js";const v=!0,P=Object.freeze(Object.defineProperty({__proto__:null,prerender:v},Symbol.toStringTag,{value:"Module"}));q(["click"]);var b=u('<section id="home" class="svelte-1h9oe6u"><div class="content svelte-1h9oe6u"><h1>ezio4df</h1> <h2 class="svelte-1h9oe6u">Student, ML researcher, Programmer</h2> <ul class="socials svelte-1h9oe6u"><li class="svelte-1h9oe6u"><a href="#" class="svelte-1h9oe6u">Github</a></li> <li class="svelte-1h9oe6u"><a href="#" class="svelte-1h9oe6u">Kaggle</a></li> <li class="svelte-1h9oe6u"><a href="#" class="svelte-1h9oe6u">StackOverflow</a></li> <li class="svelte-1h9oe6u"><a href="#" class="svelte-1h9oe6u">Email</a></li></ul></div></section>');function f(e){var i=b();a(e,i)}var g=u(`<section id="projects" class="svelte-nz99jg"><div class="content"><h1>Projects</h1> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum omnis quos voluptates. Accusantium amet
 			architecto at cum debitis dolores enim eos, eum excepturi explicabo fugiat hic ipsam laudantium libero maxime
 			natus nemo nobis nostrum numquam optio quia ratione rerum sed sequi soluta ut vero voluptatem! Accusamus, ad
 			aliquid aspernatur consequatur debitis eligendi fuga fugiat laborum necessitatibus perferendis placeat quasi
@@ -86,7 +60,7 @@
 			laboriosam maiores nam, necessitatibus nihil nobis non odit perferendis porro praesentium provident quam
 			reprehenderit soluta ut! Dolore doloribus ea est perferendis placeat rem tenetur, veritatis! Asperiores aspernatur
 			commodi culpa cum dolore ducimus eveniet facilis hic id ipsum iste laboriosam minima neque nulla omnis, pariatur
-			quae quasi quo saepe tenetur voluptatem voluptates voluptatibus?</p></div></section><!----> <section class="svelte-1uha8ag"><h1 id="timeline" class="svelte-1uha8ag">Timeline</h1> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque labore omnis similique. Atque commodi eaque fugit
+			quae quasi quo saepe tenetur voluptatem voluptates voluptatibus?</p></div></section>`);function h(e){var i=g();a(e,i)}var A=u('<meta name="description" content="portfolio site of ezio4df"/>'),x=u(`<!> <!> <section class="svelte-1uha8ag"><h1 id="timeline" class="svelte-1uha8ag">Timeline</h1> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque labore omnis similique. Atque commodi eaque fugit
 		illum iusto odio quo. Amet harum laborum unde ut voluptate. Ab, adipisci animi asperiores cum cupiditate delectus
 		dolorem ea earum facilis fuga ipsam ipsum laudantium nam neque numquam perspiciatis placeat porro quisquam, quo
 		rerum sed sequi voluptates? At cupiditate doloremque dolores error expedita facilis illo minima sint sit vero? Ab
@@ -118,29 +92,4 @@
 		voluptatem. Aspernatur assumenda corporis deserunt exercitationem laborum maxime perspiciatis rem? Accusantium
 		aspernatur cupiditate delectus deleniti dolore, dolores earum eius exercitationem hic illo ipsa molestias nostrum
 		perspiciatis quaerat quas quo recusandae reiciendis, rem reprehenderit sed tempora voluptate, voluptatibus. Eligendi
-		iusto minima nisi pariatur provident quibusdam ratione sed ullam ut voluptatem. Dicta dignissimos eveniet magni.</p></section><!----><!----></main> <footer class="svelte-12qhfyh"><p>visit <a href="https://svelte.dev/docs/kit  " class="svelte-12qhfyh">svelte.dev/docs/kit</a> to learn about SvelteKit</p></footer></div><!----><!--]--> <!--[!--><!--]--><!--]-->
-			
-			<script>
-				{
-					__sveltekit_1da0ykc = {
-						base: new URL(".", location).pathname.slice(0, -1)
-					};
-
-					const element = document.currentScript.parentElement;
-
-					Promise.all([
-						import("./internal/immutable/entry/start.D5K_UpPt.js"),
-						import("./internal/immutable/entry/app.faz2Ps20.js")
-					]).then(([kit, app]) => {
-						kit.start(app, element, {
-							node_ids: [0, 2],
-							data: [null,null],
-							form: null,
-							error: null
-						});
-					});
-				}
-			</script>
-		</div>
-	</body>
-</html>
+		iusto minima nisi pariatur provident quibusdam ratione sed ullam ut voluptatem. Dicta dignissimos eveniet magni.</p></section>`,1);function $(e){var i=x();c("1uha8ag",o=>{var r=A();l(()=>{p.title="Home"}),a(o,r)});var t=m(i);f(t);var s=n(t,2);h(s),d(2),a(e,i)}export{$ as component,P as universal};
