@@ -129,7 +129,7 @@
 
   /* Spacer element to push content down */
   .navbar-spacer {
-    height: calc(1rem * 2 + 1.5rem + 2px); /* Match the height of the navbar (padding-top + padding-bottom + border-bottom) */
+    height: calc(0.5rem * 2 + 1.5rem + 2px); /* Match the height of the navbar (padding-top + padding-bottom + border-bottom) */
     width: 100%;
     display: block; /* Ensure it takes up space */
   }
@@ -140,7 +140,7 @@
     left: 0;
     width: 100%;
     z-index: 50; /* Ensure it's above other content */
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     backdrop-filter: blur(12px); /* Glassmorphism effect */
     background-color: rgba(15, 15, 15, 0.7); /* Semi-transparent dark bg */
     border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
