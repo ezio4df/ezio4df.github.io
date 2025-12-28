@@ -13,28 +13,28 @@
 	// Since the repo doesn't show explicit options, we'll use common parameters
 	// and potentially modify the core animation logic if needed later.
 	const particleConfig = {
-		particleCount: 100, // Reduce particle density for subtlety
+		particleCount: 500, // Reduce particle density for subtlety
 		// Use rgba with very low alpha for more transparency
 		particleColor: 'rgba(200, 200, 200, 0.3)', // Light gray with 30% opacity for elegance
 		// Use rgba with even lower alpha for links
-		linkColor: 'rgba(180, 180, 180, 0.08)', // Light gray links with 8% opacity
+		linkColor: 'rgba(180, 180, 180, 0.4)', // Light gray links with 8% opacity
 		lineWidth: 1,
 		linkDistance: 80, // Reduce link distance for subtlety
-		velocity: 0.4, // Slightly slower speed
+		velocity: 0.4 // Slightly slower speed
 		// Add more config if the library supports it
 	};
 
 	// Function to initialize and start the animation
 	const initQuantumParticles = () => {
 		if (!canvasElement) {
-			console.error("Canvas element for quantum particles not found.");
+			console.error('Canvas element for quantum particles not found.');
 			return;
 		}
 
 		const canvas = canvasElement;
 		const ctx = canvas.getContext('2d');
 		if (!ctx) {
-			console.error("Failed to get 2D context for quantum particles canvas.");
+			console.error('Failed to get 2D context for quantum particles canvas.');
 			return;
 		}
 
@@ -67,7 +67,7 @@
 				// Add some initial velocity
 				this.vx = (Math.random() - 0.5) * particleConfig.velocity;
 				this.vy = (Math.random() - 0.5) * particleConfig.velocity;
-				this.originalSize = Math.random() * 1.5 + 0.5; // Smaller size range: 0.5 to 2
+				this.originalSize = Math.random() * 2.5 + 0.5; // Smaller size range: 0.5 to 2
 				this.size = this.originalSize;
 			}
 
@@ -151,8 +151,8 @@
 							const b = parseInt(colorMatch[3]);
 							ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
 						} else {
-						    // Fallback if the regex fails
-						    ctx.strokeStyle = `rgba(180, 180, 180, ${alpha})`;
+							// Fallback if the regex fails
+							ctx.strokeStyle = `rgba(180, 180, 180, ${alpha})`;
 						}
 						ctx.lineWidth = particleConfig.lineWidth;
 						ctx.moveTo(particles[i].x, particles[i].y);
@@ -196,16 +196,15 @@
 
 <!-- Container for the background image and effects -->
 <div class="layout-background-container">
-  <!-- Target div for the Quantum Particle Animation Canvas -->
-  <canvas
-    id="quantum-particles-canvas"
-    class="quantum-particles-canvas"
-    bind:this={canvasElement}
-  ></canvas>
+	<!-- Target div for the Quantum Particle Animation Canvas -->
+	<canvas
+		id="quantum-particles-canvas"
+		class="quantum-particles-canvas"
+		bind:this={canvasElement}
+	></canvas>
+	<div class="background-overlay"></div>
 </div>
 
-<!-- Separate overlay div placed *after* the background container -->
-<!--<div class="background-overlay"></div>-->
 
 <div class="app">
 	<Navbar />
@@ -222,98 +221,98 @@
 </div>
 
 <style>
-	/* Style for the background container */
-	.layout-background-container {
-		position: fixed; /* Fixed to cover the entire viewport behind the main content */
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1; /* Behind the app content and the overlay */
-		pointer-events: none; /* Allow clicks to pass through to content */
+    /* Style for the background container */
+    .layout-background-container {
+        position: fixed; /* Fixed to cover the entire viewport behind the main content */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Behind the app content and the overlay */
+        pointer-events: none; /* Allow clicks to pass through to content */
 
-		/* Apply the background image here */
-		background-image: url('/pexels-life-of-pix-7919.jpg'); /* Update path */
-		background-size: cover;
-		background-position: center;
-		background-attachment: fixed; /* Optional: for parallax effect */
-	}
+        /* Apply the background image here */
+        background-image: url('/pexels-life-of-pix-7919.jpg'); /* Update path */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; /* Optional: for parallax effect */
+    }
 
-	/* Quantum particles canvas */
-	.quantum-particles-canvas {
-		width: 100%;
-		height: 100%;
-		position: absolute; /* Positioned relative to .layout-background-container */
-		top: 0;
-		left: 0;
-		/* This canvas is now directly on top of the background image */
-		/* It should be at the same z-level as the background or just above it */
-		/* Since .layout-background-container is z-index: -2, */
-		/* and .background-overlay (next) will be z-index: -1, */
-		/* this canvas implicitly sits at z-index: -2 (same as bg) or slightly above (-1.9 if possible, handled by browser) */
-		/* For our purposes, placing it inside the -2 container makes it effectively z-index: -2. */
-		/* To ensure it's *above* the background image but *below* the overlay, */
-		/* we need the overlay to be a separate element with z-index: -1. */
-		/* This is achieved by moving the overlay div outside the container. */
-		pointer-events: none; /* Allow clicks to pass through to content, important for interactions */
-	}
-
-
-	/* Style for the darkening/blur overlay - NOW A SEPARATE ELEMENT */
-	.background-overlay {
-		position: fixed; /* Fixed to cover the entire viewport */
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0, 0, 0, 0.3); /* Dark overlay */
-		backdrop-filter: blur(4px); /* Blur effect */
-		z-index: -1; /* Behind the app content (z:1), but above the background image (z:-2) and particles (in the z:-2 container) */
-		pointer-events: none; /* Allow interaction with content */
-	}
+    /* Quantum particles canvas */
+    .quantum-particles-canvas {
+        width: 100%;
+        height: 100%;
+        position: absolute; /* Positioned relative to .layout-background-container */
+        top: 0;
+        left: 0;
+        /* This canvas is now directly on top of the background image */
+        /* It should be at the same z-level as the background or just above it */
+        /* Since .layout-background-container is z-index: -2, */
+        /* and .background-overlay (next) will be z-index: -1, */
+        /* this canvas implicitly sits at z-index: -2 (same as bg) or slightly above (-1.9 if possible, handled by browser) */
+        /* For our purposes, placing it inside the -2 container makes it effectively z-index: -2. */
+        /* To ensure it's *above* the background image but *below* the overlay, */
+        /* we need the overlay to be a separate element with z-index: -1. */
+        /* This is achieved by moving the overlay div outside the container. */
+        pointer-events: none; /* Allow clicks to pass through to content, important for interactions */
+    }
 
 
-	.app {
-		position: relative; /* Needed for children's z-index */
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-		overflow-x: hidden; /* Prevent horizontal scroll if particles or bg extend slightly */
-		z-index: 1; /* Ensure app content is above the background layers */
-	}
+    /* Style for the darkening/blur overlay - NOW A SEPARATE ELEMENT */
+    .background-overlay {
+        position: fixed; /* Fixed to cover the entire viewport */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.65); /* Dark overlay */
+        backdrop-filter: blur(12px); /* Blur effect */
+        z-index: -1; /* Behind the app content (z:1), but above the background image (z:-2) and particles (in the z:-2 container) */
+        pointer-events: none; /* Allow interaction with content */
+    }
 
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-		/* Ensure content is above background layers */
-		position: relative;
-		z-index: 2; /* Above particles and overlay */
-	}
 
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-		/* Ensure footer is also above background layers */
-		position: relative;
-		z-index: 2; /* Above particles and overlay */
-	}
+    .app {
+        position: relative; /* Needed for children's z-index */
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        overflow-x: hidden; /* Prevent horizontal scroll if particles or bg extend slightly */
+        z-index: 1; /* Ensure app content is above the background layers */
+    }
 
-	footer a {
-		font-weight: bold;
-	}
+    main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        /*padding: 1rem 0;*/
+        width: 100%;
+        /*max-width: 64rem;*/
+        margin: 0 auto;
+        box-sizing: border-box;
+        /* Ensure content is above background layers */
+        position: relative;
+        z-index: 2; /* Above particles and overlay */
+    }
 
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 12px;
+        /* Ensure footer is also above background layers */
+        position: relative;
+        z-index: 2; /* Above particles and overlay */
+    }
+
+    footer a {
+        font-weight: bold;
+    }
+
+    @media (min-width: 480px) {
+        footer {
+            padding: 12px 0;
+        }
+    }
 </style>
