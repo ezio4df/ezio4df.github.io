@@ -33,13 +33,9 @@
 <style>
     section {
         padding: var(--navbar-height) 2rem;
-        background: rgba(255, 255, 255, 0.4);
-        backdrop-filter: blur(12px);
+        background: rgba(150, 150, 150, 0.5);
+				backdrop-filter: blur(20px);
         min-height: 100vh;
-
-        * {
-            color: var(--color-bg-primary);
-        }
     }
 
     .container {
@@ -47,8 +43,10 @@
     }
 
     h1 {
-        text-align: center;
         margin: 1rem 0 3rem;
+        text-align: center;
+        color: var(--color-text-primary);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
     .projects-grid {
@@ -127,8 +125,8 @@
         margin: 0 0 1rem 0;
         font-size: 0.9rem;
         line-height: 1.4;
-				font-weight: 600;
-				/*text-align: justify;*/
+        font-weight: 600;
+        /*text-align: justify;*/
     }
 
     .card-buttons {

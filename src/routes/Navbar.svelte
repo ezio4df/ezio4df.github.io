@@ -106,6 +106,29 @@
 	});
 </script>
 
+<nav>
+	<div class="nav-container">
+		<div class="logo" on:click={() => scrollToSection('home')}>
+			ezio4df (🚧 WorkInProgress 🚧)
+		</div>
+		<ul class="nav-links">
+			{#each sections as section (section.id)}
+				<li>
+					<a
+						href="#"
+						data-nav-link={section.id}
+						class={activeSectionId === section.id ? 'active' : ''}
+						on:click|preventDefault={() => scrollToSection(section.id)}
+					>
+						{section.label}
+					</a>
+				</li>
+			{/each}
+			<div class="underline {underlineAnimationClass}" style={underlineStyle}></div>
+		</ul>
+	</div>
+</nav>
+
 <style lang="scss">
   :global(html) {
     scroll-behavior: smooth;
@@ -197,33 +220,11 @@
     }
   }
 
-	.logo {
-		font-family: var(--font-mono);
-		font-weight: 800;
-		font-style: italic;
-	}
+  .logo {
+    font-family: var(--font-mono);
+    font-weight: 800;
+    //font-style: italic;
+  }
 
 </style>
 
-<nav>
-	<div class="nav-container">
-		<div class="logo" on:click={() => scrollToSection('home')}>
-			ezio4df
-		</div>
-		<ul class="nav-links">
-			{#each sections as section (section.id)}
-				<li>
-					<a
-						href="#"
-						data-nav-link={section.id}
-						class={activeSectionId === section.id ? 'active' : ''}
-						on:click|preventDefault={() => scrollToSection(section.id)}
-					>
-						{section.label}
-					</a>
-				</li>
-			{/each}
-			<div class="underline {underlineAnimationClass}" style={underlineStyle}></div>
-		</ul>
-	</div>
-</nav>
