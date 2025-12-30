@@ -1,102 +1,318 @@
+<svelte:head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</svelte:head>
+
+
 <script>
+	import { onMount } from 'svelte';
+
+	// Timeline data
+	const timelineItems = [
+		{
+			id: 1,
+			title: 'Started Learning to Code',
+			subtitle: 'Self-taught Beginnings',
+			description: 'Began my journey in programming with PHP and JavaScript, spending countless hours learning the fundamentals of web development.',
+			startDate: '2018-01',
+			endDate: '2019-06',
+			icon: 'code'
+		},
+		{
+			id: 2,
+			title: 'Advanced to Python',
+			subtitle: 'Expanding Skill Set',
+			description: 'Dove deep into Python programming, exploring its applications in web development and automation scripts.',
+			startDate: '2019-07',
+			endDate: '2020-08',
+			icon: 'laptop-code'
+		},
+		{
+			id: 3,
+			title: 'High School Graduation (SSC)',
+			subtitle: 'Dhaka, Bangladesh',
+			description: 'Completed Secondary School Certificate with a GPA of 5.00, focusing on science stream.',
+			startDate: '2020-09',
+			endDate: '2022-03',
+			icon: 'graduation-cap'
+		},
+		{
+			id: 4,
+			title: 'Higher Secondary (HSC)',
+			subtitle: 'Dhaka, Bangladesh',
+			description: 'Completed Higher Secondary education with a GPA of 4.83 (without optional) / 5.00 (with optional), preparing for university studies.',
+			startDate: '2022-04',
+			endDate: '2023-12',
+			icon: 'school'
+		},
+		{
+			id: 5,
+			title: 'Gap Year',
+			subtitle: 'Focused Learning Period',
+			description: 'Took a year to intensify my knowledge in AI/ML/DL/RL and work on personal projects while preparing for university applications.',
+			startDate: '2024-01',
+			endDate: '2024-12',
+			icon: 'brain'
+		},
+		{
+			id: 6,
+			title: 'Starting University',
+			subtitle: 'BSc in Computer Science',
+			description: 'Beginning my undergraduate studies with a focus on AI/ML research and development.',
+			startDate: '2025-01',
+			endDate: null, // null means ongoing
+			icon: 'university'
+		}
+	];
+
+	// Function to format date
+	function formatDate(dateString) {
+		const date = new Date(dateString);
+		return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+	}
+
+	// Function to calculate duration
+	function calculateDuration(start, end) {
+		if (!end) return null;
+
+		const startDate = new Date(start);
+		const endDate = new Date(end);
+
+		let years = endDate.getFullYear() - startDate.getFullYear();
+		let months = endDate.getMonth() - startDate.getMonth();
+
+		if (months < 0) {
+			years--;
+			months += 12;
+		}
+
+		let result = '';
+		if (years > 0) result += `${years} yr${years > 1 ? 's' : ''} `;
+		if (months > 0) result += `${months} mo${months > 1 ? 's' : ''}`;
+
+		return result.trim();
+	}
+
+	// Function to get icon class
+	function getIconClass(iconName) {
+		return `fa-solid fa-${iconName}`;
+	}
+
+	// For responsiveness
+	let isMobile = false;
+
+	onMount(() => {
+		const checkMobile = () => {
+			isMobile = window.innerWidth < 768;
+		};
+
+		checkMobile();
+		window.addEventListener('resize', checkMobile);
+
+		return () => {
+			window.removeEventListener('resize', checkMobile);
+		};
+	});
 </script>
 
 <section id="timeline">
 	<div class="container">
 		<h1>Timeline</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum omnis quos voluptates. Accusantium amet
-			architecto at cum debitis dolores enim eos, eum excepturi explicabo fugiat hic ipsam laudantium libero maxime
-			natus nemo nobis nostrum numquam optio quia ratione rerum sed sequi soluta ut vero voluptatem! Accusamus, ad
-			aliquid aspernatur consequatur debitis eligendi fuga fugiat laborum necessitatibus perferendis placeat quasi
-			temporibus voluptate. Adipisci deserunt ducimus eaque est et eum explicabo fugit in itaque, laborum libero maiores
-			molestiae nisi officiis omnis optio quae rem rerum, similique, totam! Assumenda autem consequatur dolor fuga ipsam
-			ipsum laudantium odit possimus suscipit voluptatum. Ea, ex, iste!</p>
-		<p>Ad dicta eum fuga modi nesciunt perferendis quia sunt tenetur unde. Accusamus atque consectetur cum esse modi qui
-			similique sit velit voluptates, voluptatibus. A ab accusamus aperiam at blanditiis, culpa cumque debitis delectus
-			dolor dolore dolorem et expedita explicabo fugiat harum ipsum iste neque nostrum omnis pariatur possimus provident
-			quae quam quasi quia quidem ratione recusandae repudiandae sed ut velit veniam voluptas voluptatibus. Accusantium
-			architecto aut dolorem dolorum ducimus eaque excepturi hic ipsa, iste laborum modi placeat quibusdam quod saepe
-			sint velit veniam. Consequatur dignissimos eligendi fuga fugit inventore iusto nemo officia provident quam
-			recusandae repellat, vero, voluptatum? Animi, omnis!</p>
-		<p>Architecto asperiores fuga hic id inventore ipsa ipsam maxime nobis odio rerum sunt tenetur ullam ut voluptate,
-			voluptatum! Autem beatae dolor dolorem eius eveniet expedita ipsum iure nisi odit officia possimus, praesentium
-			rem suscipit. Accusamus adipisci beatae consectetur delectus eaque eligendi error ipsa, ipsam minus nobis quos sed
-			temporibus totam? Amet deleniti explicabo magni quidem sapiente soluta suscipit unde, ut voluptates. Adipisci
-			doloribus eaque fugit hic ipsam maiores nostrum perspiciatis possimus quas quod. Adipisci aliquam aspernatur,
-			consequatur consequuntur cum debitis distinctio earum eum excepturi fuga magni modi molestias nam nulla obcaecati
-			quibusdam quis quos ratione repellendus saepe, similique suscipit voluptate.</p>
-		<p>Dolore explicabo, facere illum molestias soluta ullam voluptatibus? Accusantium ad alias aliquid atque blanditiis
-			debitis dignissimos distinctio dolor dolore esse excepturi exercitationem illo impedit iste minima nisi non
-			nostrum odit possimus praesentium quae quam quas qui quia quidem quis repellendus, rerum sint suscipit temporibus
-			tenetur vel vero vitae voluptas voluptatem voluptatibus voluptatum. Assumenda eaque eligendi ipsam ipsum minima
-			nemo quos. A animi architecto blanditiis dignissimos dolor dolorem dolores ea excepturi fuga iure laudantium
-			libero magni mollitia neque non numquam perspiciatis, quidem sit, sunt suscipit temporibus unde ut vero vitae
-			voluptatem! Alias dolores ducimus eligendi illum iure magni ratione reprehenderit, voluptas.</p>
-		<p>Debitis in ipsa molestiae nisi quia tempora totam vel, vero. Ab adipisci cupiditate ex fugiat ipsam modi quam!
-			Animi explicabo ipsa labore magni officiis ratione rerum! Corporis debitis ea error facilis ipsum, modi molestias,
-			nisi odit quasi quis quod reprehenderit rerum sapiente totam vero! Architecto consectetur dicta dignissimos eaque
-			iure labore, laborum obcaecati officia, optio, quibusdam reiciendis rerum sequi ullam vel voluptatem? Ab ad
-			architecto atque beatae corporis cum debitis deleniti dolorum ducimus ea eligendi error fugiat hic iste minus
-			molestiae natus nisi officia, omnis quas recusandae repellendus repudiandae sint sit soluta tempore unde? Amet cum
-			illo odio similique vero.</p>
-		<p>Assumenda corporis cumque cupiditate, eaque harum iste itaque, pariatur porro, ratione sequi totam vel voluptate
-			voluptatibus. Cumque earum iusto nam nesciunt odit sequi tempora voluptatibus. Animi deleniti hic itaque,
-			necessitatibus officiis pariatur repudiandae! A culpa harum minus, neque officia velit. Assumenda autem earum
-			explicabo libero maiores nulla optio voluptate! Accusantium animi assumenda aut beatae cum dolore doloremque
-			dolorum eaque expedita, id impedit in natus quaerat quisquam recusandae, tenetur totam vitae. A aspernatur at
-			dolorem, dolorum enim facere fuga incidunt labore magnam minus natus nisi nobis obcaecati pariatur praesentium
-			provident quisquam recusandae repellat rerum sequi unde velit vero! Autem, fugit, quas.</p>
-		<p>Eveniet ex exercitationem fugit laborum laudantium molestiae quisquam, reiciendis. Ab beatae corporis delectus
-			deserunt dolor dolore dolorem dolorum error expedita magnam nam neque perspiciatis possimus, praesentium quo quos,
-			ratione sint sit vitae voluptate. Accusantium aliquid beatae doloribus eum, exercitationem in itaque laboriosam
-			molestiae obcaecati officia perspiciatis porro provident quam quasi reprehenderit voluptas voluptatum. Atque
-			cumque, eius impedit laborum minima nostrum provident ratione voluptatum. A alias consectetur est minus molestias
-			omnis quibusdam voluptatum. Alias aut, blanditiis dolore error excepturi fugit illum incidunt laboriosam libero
-			minus nam natus nemo non officiis optio placeat possimus provident, quibusdam quo quos sapiente sint totam
-			veniam?</p>
-		<p>Accusantium dolores eos eum illo omnis porro praesentium quas quibusdam quo repellendus. A blanditiis dolores
-			harum maxime pariatur porro repellat sapiente sunt temporibus voluptas. Ab accusamus consequatur corporis debitis
-			delectus est fuga harum hic, maxime necessitatibus neque nihil nobis numquam odio, perferendis possimus
-			praesentium quod ratione reprehenderit sint sunt tempora voluptas voluptatem voluptates voluptatum. Aperiam
-			blanditiis delectus dicta distinctio ipsa iusto magnam nihil, odio odit perferendis placeat praesentium quibusdam
-			quod reiciendis sint tempora ullam vel velit veniam veritatis. Autem culpa debitis dicta et laudantium magni non
-			omnis, pariatur placeat possimus quae quaerat quos ratione repellat sit, tempora totam voluptatem!
-			Perferendis.</p>
-		<p>Consequuntur, corporis dicta distinctio dolorum, eaque eligendi esse ex facilis ipsa, iure labore maiores minima
-			minus modi molestiae nemo neque nesciunt nobis odio omnis placeat praesentium qui quidem quod quos repellat vel
-			voluptatibus. Aliquam aliquid, aperiam commodi consectetur, consequuntur ea eius est eum fugit ipsam nobis
-			officia, possimus praesentium quia quidem repellat repellendus! Ab accusantium aliquid atque blanditiis distinctio
-			dolorem dolorum esse est ex exercitationem facilis hic illum incidunt ipsam laudantium modi molestiae nemo nobis
-			nostrum nulla numquam, odio optio pariatur quae quo saepe sed sit suscipit temporibus vel velit, voluptate
-			voluptates voluptatibus. Beatae, cum eligendi error itaque praesentium sequi?</p>
-		<p>Ab cumque facilis fugit id libero maxime, nam tenetur unde. Aliquid assumenda atque, culpa deleniti doloribus
-			earum eos, error impedit incidunt itaque iusto magni nemo officiis quasi quod sequi soluta voluptatum. Autem
-			beatae, id iure minus quia quibusdam ullam vel? Aliquam assumenda delectus dolores, dolorum, eaque fuga fugit
-			laboriosam maiores nam, necessitatibus nihil nobis non odit perferendis porro praesentium provident quam
-			reprehenderit soluta ut! Dolore doloribus ea est perferendis placeat rem tenetur, veritatis! Asperiores aspernatur
-			commodi culpa cum dolore ducimus eveniet facilis hic id ipsum iste laboriosam minima neque nulla omnis, pariatur
-			quae quasi quo saepe tenetur voluptatem voluptates voluptatibus?</p>
+
+		<div class="timeline">
+			{#each timelineItems as item, index}
+				<div class="timeline-item {index % 2 === 0 ? 'left' : 'right'}">
+					<div class="timeline-content">
+						{#if index % 2 === 0}
+							<!-- Details side (left) -->
+							<div class="timeline-card">
+								<h3>{item.title}</h3>
+								<h4>{item.subtitle}</h4>
+								<p>{@html item.description}</p>
+							</div>
+							<!-- Date side (right) -->
+							<div class="timeline-date">
+								{formatDate(item.startDate)} - {item.endDate ? formatDate(item.endDate) : 'Present'}
+								{#if item.endDate}
+									<div class="duration">{calculateDuration(item.startDate, item.endDate)}</div>
+								{/if}
+							</div>
+						{:else}
+							<!-- Date side (left) -->
+							<div class="timeline-date">
+								{formatDate(item.startDate)} - {item.endDate ? formatDate(item.endDate) : 'Present'}
+								{#if item.endDate}
+									<div class="duration">{calculateDuration(item.startDate, item.endDate)}</div>
+								{/if}
+							</div>
+							<!-- Details side (right) -->
+							<div class="timeline-card">
+								<h3>{item.title}</h3>
+								<h4>{item.subtitle}</h4>
+								<p>{@html item.description}</p>
+							</div>
+						{/if}
+					</div>
+					<div class="timeline-marker">
+						<i class="{getIconClass(item.icon)}"></i>
+					</div>
+				</div>
+			{/each}
+		</div>
 	</div>
 </section>
-
 
 <style>
     section {
         padding: var(--navbar-height) 0;
-        /*background: rgba(255, 255, 255, 0.4);*/
-				/*backdrop-filter: blur(12px);*/
         min-height: 100vh;
-
-				* {
-						/*color: var(--color-bg-primary);*/
-				}
-
+        background: var(--color-bg-secondary);
     }
+
     .container {
-				max-width: var(--page-max-width);
-        /*display: flex;*/
-				/*flex-flow: column nowrap;*/
-        /*justify-content: center;*/
-        /*align-items: center;*/
+        max-width: var(--page-max-width);
+        padding: 2rem;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 3rem;
+        color: var(--color-text-primary);
+        font-size: 2.5rem;
+    }
+
+    .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    /* Vertical line */
+    .timeline::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        background: var(--color-accent-primary);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+        border-radius: 3px;
+    }
+
+    .timeline-item {
+        position: relative;
+        width: 50%;
+        padding: 20px 40px;
+    }
+
+    .timeline-item.left {
+        left: 0;
+    }
+
+    .timeline-item.right {
+        left: 50%;
+    }
+
+    .timeline-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .timeline-card {
+        background: var(--color-bg-card);
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        border-left: 3px solid var(--color-accent-primary);
+    }
+
+    .timeline-card h3 {
+        color: var(--color-text-primary);
+        margin: 0 0 0.5rem 0;
+        font-size: 1.4rem;
+    }
+
+    .timeline-card h4 {
+        color: var(--color-accent-primary);
+        margin: 0 0 1rem 0;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .timeline-card p {
+        color: var(--color-text-secondary);
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    .timeline-date {
+        text-align: center;
+        padding: 1rem;
+        background: var(--color-bg-tertiary);
+        border-radius: var(--border-radius);
+        color: var(--color-text-primary);
+        font-weight: 600;
+    }
+
+    .duration {
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: var(--color-accent-secondary);
+        margin-top: 0.5rem;
+    }
+
+    .timeline-marker {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        background: var(--color-accent-primary);
+        border: 4px solid var(--color-bg-primary);
+        border-radius: 50%;
+        top: 40px;
+        left: 50%;
+        margin-left: -12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+    }
+
+    .timeline-marker i {
+        color: var(--color-bg-primary);
+        font-size: 0.8rem;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+        .timeline::after {
+            left: 31px;
+        }
+
+        .timeline-item {
+            width: 100%;
+            padding-left: 70px;
+            padding-right: 25px;
+            left: 0 !important;
+        }
+
+        .timeline-content {
+            align-items: flex-start;
+        }
+
+        .timeline-card {
+            width: 100%;
+        }
+
+        .timeline-date {
+            width: 100%;
+            text-align: left;
+        }
+
+        .timeline-marker {
+            left: 31px;
+            margin-left: -12px;
+        }
     }
 </style>
+
