@@ -36,12 +36,15 @@
 		const activeLink = document.querySelector(`a[data-nav-link="${targetId}"]`);
 		if (activeLink) {
 			const linkRect = activeLink.getBoundingClientRect();
-			const navRect = activeLink.closest('nav')!.getBoundingClientRect();
-			const left = linkRect.left - navRect.left;
-			const width = linkRect.width;
+			const navContainer = document.querySelector('.nav-links');
+			if (navContainer) {
+				const containerRect = navContainer.getBoundingClientRect();
+				const left = linkRect.left - containerRect.left;
+				const width = linkRect.width;
 
-			underlineStyle = `width: ${width}px; left: ${left}px;`;
-			underlineAnimationClass = 'underline-visible underline-animate';
+				underlineStyle = `width: ${width}px; left: ${left}px;`;
+				underlineAnimationClass = 'underline-visible underline-animate';
+			}
 		} else {
 			underlineAnimationClass = 'underline-hidden';
 		}
@@ -132,19 +135,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-
-    .logo {
-      font-size: 1.125rem;
-      font-weight: 700;
-      color: #f3f4f6;
-      cursor: pointer;
-      font-family: var(--font-mono);
-      transition: color 0.2s ease;
-
-      &:hover {
-        color: var(--color-accent-primary, #6366f1);
-      }
     }
 
     .nav-links {
