@@ -179,6 +179,10 @@
 <style lang="scss">
   @use "sass:math";
 
+  $vertical-line-width: 6px;
+  $card-space-from-line: 40px;
+
+
   section {
     padding: var(--navbar-height) 0;
     min-height: 100vh;
@@ -201,7 +205,7 @@
 
   .timeline {
     position: relative;
-    max-width: 800px;
+    max-width: 896px;
     margin: 0 auto;
   }
 
@@ -209,30 +213,32 @@
   .timeline::after {
     content: '';
     position: absolute;
-    width: 6px;
+    width: $vertical-line-width;
     background: var(--color-accent-primary);
     top: 0;
     bottom: 0;
     left: 50%;
-    margin-left: -3px;
+    margin-left: - math.div($vertical-line-width, 2);
     border-radius: 3px;
   }
 
   .timeline-item {
     position: relative;
     width: 50%;
-    padding: 20px 40px;
+    padding: 20px $card-space-from-line 80px;
+
+    &.left {
+      left: 0;
+    }
+
+    &.right {
+      left: 50%;
+    }
   }
 
-  .timeline-item.left {
-    left: 0;
-  }
-
-  .timeline-item.right {
-    left: 50%;
-  }
 
   .timeline-content {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -244,6 +250,7 @@
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
 
+    // border side
     .timeline-item.left & {
       border-left: 3px solid var(--color-accent-primary);
     }
@@ -251,42 +258,60 @@
     .timeline-item.right & {
       border-right: 3px solid var(--color-accent-primary);
     }
+
+    // main title
+    h3 {
+      color: var(--color-text-primary);
+      margin: 0 0 0.5rem 0;
+      font-size: 1.4rem;
+    }
+
+    // sub title
+    h4 {
+      color: var(--color-accent-primary);
+      margin: 0 0 1rem 0;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    // detailed paragraph
+    p {
+      color: var(--color-text-secondary);
+      margin: 0;
+      line-height: 1.5;
+    }
   }
 
-  .timeline-card h3 {
-    color: var(--color-text-primary);
-    margin: 0 0 0.5rem 0;
-    font-size: 1.4rem;
-  }
-
-  .timeline-card h4 {
-    color: var(--color-accent-primary);
-    margin: 0 0 1rem 0;
-    font-size: 1rem;
-    font-weight: 400;
-  }
-
-  .timeline-card p {
-    color: var(--color-text-secondary);
-    margin: 0;
-    line-height: 1.6;
-  }
 
   .timeline-date {
     text-align: center;
-    padding: 1rem;
+    padding: 0.75rem;
     background: var(--color-bg-tertiary);
     border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
     color: var(--color-text-primary);
     font-weight: 600;
+
+    position: absolute;
+    top: 1rem;
+    width: 100%;
+
+    .timeline-item.left & {
+      left: calc(100% + #{$card-space-from-line * 2});
+    }
+
+    .timeline-item.right & {
+      left: calc(-100% - #{$card-space-from-line * 2});
+    }
+
+    .duration {
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: var(--color-accent-secondary);
+      margin-top: 0.2rem;
+    }
   }
 
-  .duration {
-    font-size: 0.8rem;
-    font-weight: bold;
-    color: var(--color-accent-secondary);
-    margin-top: 0.5rem;
-  }
 
   .timeline-marker {
     $size: 54px;
@@ -298,7 +323,7 @@
     border: 4px solid var(--color-bg-primary);
     border-radius: 50%;
     top: 40px;
-    margin-left: - math.div($size, 2);;
+    margin-left: - math.div($size, 2);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -311,12 +336,13 @@
     .timeline-item.right > & {
       left: 0%;
     }
+
+    i {
+      color: var(--color-bg-primary);
+      font-size: 1.3rem;
+    }
   }
 
-  .timeline-marker i {
-    color: var(--color-bg-primary);
-    font-size: 1.3rem;
-  }
 
   /* Responsive styles */
   @media (max-width: 768px) {

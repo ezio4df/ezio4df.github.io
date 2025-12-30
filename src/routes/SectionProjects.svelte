@@ -6,7 +6,7 @@
 		<h1>Projects</h1>
 		<div class="projects-grid">
 			{#each [1, 2, 3, 4, 5, 6] as _, i}
-				<div class="project-card">
+				<div class="project-card" title="2">
 					<div class="card-image">
 						<img src={`https://placehold.co/300x400?text=Project+${i+1}`} alt={`Project ${i+1}`} />
 						<div class="card-overlay">
@@ -33,8 +33,8 @@
 <style>
     section {
         padding: var(--navbar-height) 2rem;
-        background: rgba(150, 150, 150, 0.5);
-				backdrop-filter: blur(20px);
+        background: rgba(150, 150, 150, 0.3);
+        backdrop-filter: blur(20px);
         min-height: 100vh;
     }
 
@@ -65,26 +65,28 @@
         background: var(--color-bg-card);
         box-shadow: var(--shadow-lg);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
     }
 
-    .project-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
-    }
 
     .card-image {
         width: 100%;
         height: 350px;
         position: relative;
         overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
     }
 
-    .card-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
 
     .card-overlay {
         position: absolute;
@@ -97,37 +99,39 @@
         align-items: flex-end;
         opacity: 0;
         transition: opacity 0.3s ease;
+
+        .project-card:hover & {
+            opacity: 1;
+        }
     }
 
-    .project-card:hover .card-overlay {
-        opacity: 1;
-    }
 
     .card-content {
         padding: 1.5rem;
         width: 100%;
         transform: translateY(100%);
         transition: transform 0.3s ease;
+
+        .project-card:hover & {
+            transform: translateY(0);
+        }
+
+        h3 {
+            color: var(--color-text-primary);
+            margin: 0 0 0.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        p {
+            color: var(--color-text-secondary);
+            margin: 0 0 1rem 0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            font-weight: 600;
+            /*text-align: justify;*/
+        }
     }
 
-    .project-card:hover .card-content {
-        transform: translateY(0);
-    }
-
-    .card-content h3 {
-        color: var(--color-text-primary);
-        margin: 0 0 0.5rem 0;
-        font-size: 1.2rem;
-    }
-
-    .card-content p {
-        color: var(--color-text-secondary);
-        margin: 0 0 1rem 0;
-        font-size: 0.9rem;
-        line-height: 1.4;
-        font-weight: 600;
-        /*text-align: justify;*/
-    }
 
     .card-buttons {
         display: flex;
@@ -148,20 +152,21 @@
         background: var(--color-accent-primary);
         color: var(--color-bg-primary);
         flex: 1;
+
+        &:hover {
+            background: #2a90c5;
+        }
     }
 
-    .btn-read-more:hover {
-        background: #2a90c5;
-    }
 
     .btn-code {
         background: var(--color-bg-tertiary);
         color: var(--color-text-primary);
         flex: 1;
-    }
 
-    .btn-code:hover {
-        background: #3a3a3a;
+        &:hover {
+            background: #3a3a3a;
+        }
     }
 
     .card-title {
@@ -175,15 +180,16 @@
         z-index: 2;
         transform: translateY(0);
         transition: transform 0.3s ease;
+
+        .project-card:hover & {
+            transform: translateY(100%);
+        }
+
+        h3 {
+            margin: 0;
+            color: var(--color-text-primary);
+            font-size: 1rem;
+        }
     }
 
-    .project-card:hover .card-title {
-        transform: translateY(100%);
-    }
-
-    .card-title h3 {
-        margin: 0;
-        color: var(--color-text-primary);
-        font-size: 1rem;
-    }
 </style>
