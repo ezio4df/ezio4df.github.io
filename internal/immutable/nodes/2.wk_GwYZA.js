@@ -1,29 +1,4 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="./favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		
-		<link href="./internal/immutable/assets/0.Bfg9K2n7.css" rel="stylesheet">
-		<link href="./internal/immutable/assets/2.CIBCTB7L.css" rel="stylesheet">
-		<link rel="modulepreload" href="./internal/immutable/entry/start.Dcd4_som.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/BdO-lehy.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/Dd1RieDy.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/DnDcyPEP.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/DEBjBIBq.js">
-		<link rel="modulepreload" href="./internal/immutable/entry/app.D9whm2VQ.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/v4i_9qfL.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/BFYYamZ8.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/NGr7Dhjs.js">
-		<link rel="modulepreload" href="./internal/immutable/nodes/0.BqJrdY7q.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/BrKPUSz0.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/C_rRa4L9.js">
-		<link rel="modulepreload" href="./internal/immutable/nodes/2.wk_GwYZA.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/CeWIB08_.js"><!--1uha8ag--><meta name="description" content="portfolio site of ezio4df"/><!----><title>Home</title>
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents"><!--[--><!--[--><!----><div class="layout-background-container svelte-12qhfyh"><canvas id="quantum-particles-canvas" class="quantum-particles-canvas svelte-12qhfyh"></canvas> <div class="background-overlay svelte-12qhfyh"></div></div> <div class="app svelte-12qhfyh"><nav class="svelte-jfirkk"><div class="nav-container svelte-jfirkk"><div class="logo svelte-jfirkk">ezio4df</div> <ul class="nav-links svelte-jfirkk"><!--[--><li class="svelte-jfirkk"><a href="#" data-nav-link="home" class="active svelte-jfirkk">Home</a></li><li class="svelte-jfirkk"><a href="#" data-nav-link="projects" class="svelte-jfirkk">Projects</a></li><li class="svelte-jfirkk"><a href="#" data-nav-link="timeline" class="svelte-jfirkk">Timeline</a></li><li class="svelte-jfirkk"><a href="#" data-nav-link="skills" class="svelte-jfirkk">Skills</a></li><li class="svelte-jfirkk"><a href="#" data-nav-link="about" class="svelte-jfirkk">About</a></li><li class="svelte-jfirkk"><a href="#" data-nav-link="contact" class="svelte-jfirkk">Contact</a></li><!--]--> <div class="underline underline-hidden svelte-jfirkk" style="width: 0; left: 0;"></div></ul></div></nav><!----> <main class="svelte-12qhfyh"><!----><section id="home" class="svelte-k6i6zt"><div class="content svelte-k6i6zt"><h1>ezio4df</h1> <h2 class="svelte-k6i6zt">Student, AI/ML enthusiast, Programmer</h2> <ul class="socials svelte-k6i6zt"><li class="svelte-k6i6zt"><a href="#" class="svelte-k6i6zt">Github</a></li> <li class="svelte-k6i6zt"><a href="#" class="svelte-k6i6zt">Kaggle</a></li> <li class="svelte-k6i6zt"><a href="#" class="svelte-k6i6zt">StackOverflow</a></li> <li class="svelte-k6i6zt"><a href="#" class="svelte-k6i6zt">Email</a></li></ul></div></section><!----> <section id="projects" class="svelte-dpv52z"><div class="container svelte-dpv52z"><h1 class="svelte-dpv52z">Projects!</h1> <p class="svelte-dpv52z">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum omnis quos voluptates. Accusantium amet
+import{f as a,a as u}from"../chunks/BFYYamZ8.js";import"../chunks/BrKPUSz0.js";import{G as c,B as q,$ as v,M as s}from"../chunks/Dd1RieDy.js";import{h as b}from"../chunks/CeWIB08_.js";const f=!0,O=Object.freeze(Object.defineProperty({__proto__:null,prerender:f},Symbol.toStringTag,{value:"Module"}));var g=a('<section id="home" class="svelte-k6i6zt"><div class="content svelte-k6i6zt"><h1>ezio4df</h1> <h2 class="svelte-k6i6zt">Student, AI/ML enthusiast, Programmer</h2> <ul class="socials svelte-k6i6zt"><li class="svelte-k6i6zt"><a href="#" class="svelte-k6i6zt">Github</a></li> <li class="svelte-k6i6zt"><a href="#" class="svelte-k6i6zt">Kaggle</a></li> <li class="svelte-k6i6zt"><a href="#" class="svelte-k6i6zt">StackOverflow</a></li> <li class="svelte-k6i6zt"><a href="#" class="svelte-k6i6zt">Email</a></li></ul></div></section>');function A(e){var i=g();u(e,i)}var h=a(`<section id="projects" class="svelte-dpv52z"><div class="container svelte-dpv52z"><h1 class="svelte-dpv52z">Projects!</h1> <p class="svelte-dpv52z">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum omnis quos voluptates. Accusantium amet
 			architecto at cum debitis dolores enim eos, eum excepturi explicabo fugiat hic ipsam laudantium libero maxime
 			natus nemo nobis nostrum numquam optio quia ratione rerum sed sequi soluta ut vero voluptatem! Accusamus, ad
 			aliquid aspernatur consequatur debitis eligendi fuga fugiat laborum necessitatibus perferendis placeat quasi
@@ -85,7 +60,7 @@
 			laboriosam maiores nam, necessitatibus nihil nobis non odit perferendis porro praesentium provident quam
 			reprehenderit soluta ut! Dolore doloribus ea est perferendis placeat rem tenetur, veritatis! Asperiores aspernatur
 			commodi culpa cum dolore ducimus eveniet facilis hic id ipsum iste laboriosam minima neque nulla omnis, pariatur
-			quae quasi quo saepe tenetur voluptatem voluptates voluptatibus?</p></div></section><!----> <section id="timeline" class="svelte-1s9be5y"><div class="container svelte-1s9be5y"><h1 class="svelte-1s9be5y">Timeline</h1> <p class="svelte-1s9be5y">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum omnis quos voluptates. Accusantium amet
+			quae quasi quo saepe tenetur voluptatem voluptates voluptatibus?</p></div></section>`);function x(e){var i=h();u(e,i)}var z=a(`<section id="timeline" class="svelte-1s9be5y"><div class="container svelte-1s9be5y"><h1 class="svelte-1s9be5y">Timeline</h1> <p class="svelte-1s9be5y">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum omnis quos voluptates. Accusantium amet
 			architecto at cum debitis dolores enim eos, eum excepturi explicabo fugiat hic ipsam laudantium libero maxime
 			natus nemo nobis nostrum numquam optio quia ratione rerum sed sequi soluta ut vero voluptatem! Accusamus, ad
 			aliquid aspernatur consequatur debitis eligendi fuga fugiat laborum necessitatibus perferendis placeat quasi
@@ -147,7 +122,7 @@
 			laboriosam maiores nam, necessitatibus nihil nobis non odit perferendis porro praesentium provident quam
 			reprehenderit soluta ut! Dolore doloribus ea est perferendis placeat rem tenetur, veritatis! Asperiores aspernatur
 			commodi culpa cum dolore ducimus eveniet facilis hic id ipsum iste laboriosam minima neque nulla omnis, pariatur
-			quae quasi quo saepe tenetur voluptatem voluptates voluptatibus?</p></div></section><!----> <section id="skills" class="svelte-bejry3"><div class="container svelte-bejry3"><h1 class="svelte-bejry3">Skills</h1> <p class="svelte-bejry3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum omnis quos voluptates. Accusantium amet
+			quae quasi quo saepe tenetur voluptatem voluptates voluptatibus?</p></div></section>`);function j(e){var i=z();u(e,i)}var k=a(`<section id="skills" class="svelte-bejry3"><div class="container svelte-bejry3"><h1 class="svelte-bejry3">Skills</h1> <p class="svelte-bejry3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum omnis quos voluptates. Accusantium amet
 			architecto at cum debitis dolores enim eos, eum excepturi explicabo fugiat hic ipsam laudantium libero maxime
 			natus nemo nobis nostrum numquam optio quia ratione rerum sed sequi soluta ut vero voluptatem! Accusamus, ad
 			aliquid aspernatur consequatur debitis eligendi fuga fugiat laborum necessitatibus perferendis placeat quasi
@@ -209,7 +184,7 @@
 			laboriosam maiores nam, necessitatibus nihil nobis non odit perferendis porro praesentium provident quam
 			reprehenderit soluta ut! Dolore doloribus ea est perferendis placeat rem tenetur, veritatis! Asperiores aspernatur
 			commodi culpa cum dolore ducimus eveniet facilis hic id ipsum iste laboriosam minima neque nulla omnis, pariatur
-			quae quasi quo saepe tenetur voluptatem voluptates voluptatibus?</p></div></section><!----> <section id="about" class="svelte-sh3uj6"><div class="container svelte-sh3uj6"><h1 class="svelte-sh3uj6">About</h1> <p class="svelte-sh3uj6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum omnis quos voluptates. Accusantium amet
+			quae quasi quo saepe tenetur voluptatem voluptates voluptatibus?</p></div></section>`);function y(e){var i=k();u(e,i)}var C=a(`<section id="about" class="svelte-sh3uj6"><div class="container svelte-sh3uj6"><h1 class="svelte-sh3uj6">About</h1> <p class="svelte-sh3uj6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum omnis quos voluptates. Accusantium amet
 			architecto at cum debitis dolores enim eos, eum excepturi explicabo fugiat hic ipsam laudantium libero maxime
 			natus nemo nobis nostrum numquam optio quia ratione rerum sed sequi soluta ut vero voluptatem! Accusamus, ad
 			aliquid aspernatur consequatur debitis eligendi fuga fugiat laborum necessitatibus perferendis placeat quasi
@@ -271,7 +246,7 @@
 			laboriosam maiores nam, necessitatibus nihil nobis non odit perferendis porro praesentium provident quam
 			reprehenderit soluta ut! Dolore doloribus ea est perferendis placeat rem tenetur, veritatis! Asperiores aspernatur
 			commodi culpa cum dolore ducimus eveniet facilis hic id ipsum iste laboriosam minima neque nulla omnis, pariatur
-			quae quasi quo saepe tenetur voluptatem voluptates voluptatibus?</p></div></section><!----> <section id="contact" class="svelte-ukzpfo"><div class="container svelte-ukzpfo"><h1 class="svelte-ukzpfo">Contact</h1> <p class="svelte-ukzpfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum omnis quos voluptates. Accusantium amet
+			quae quasi quo saepe tenetur voluptatem voluptates voluptatibus?</p></div></section>`);function D(e){var i=C();u(e,i)}var _=a(`<section id="contact" class="svelte-ukzpfo"><div class="container svelte-ukzpfo"><h1 class="svelte-ukzpfo">Contact</h1> <p class="svelte-ukzpfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum omnis quos voluptates. Accusantium amet
 			architecto at cum debitis dolores enim eos, eum excepturi explicabo fugiat hic ipsam laudantium libero maxime
 			natus nemo nobis nostrum numquam optio quia ratione rerum sed sequi soluta ut vero voluptatem! Accusamus, ad
 			aliquid aspernatur consequatur debitis eligendi fuga fugiat laborum necessitatibus perferendis placeat quasi
@@ -333,29 +308,4 @@
 			laboriosam maiores nam, necessitatibus nihil nobis non odit perferendis porro praesentium provident quam
 			reprehenderit soluta ut! Dolore doloribus ea est perferendis placeat rem tenetur, veritatis! Asperiores aspernatur
 			commodi culpa cum dolore ducimus eveniet facilis hic id ipsum iste laboriosam minima neque nulla omnis, pariatur
-			quae quasi quo saepe tenetur voluptatem voluptates voluptatibus?</p></div></section><!----><!----><!----></main> <footer class="svelte-12qhfyh"><p>visit <a href="https://svelte.dev/docs/kit  " class="svelte-12qhfyh">svelte.dev/docs/kit</a> to learn about SvelteKit</p></footer></div><!----><!--]--> <!--[!--><!--]--><!--]-->
-			
-			<script>
-				{
-					__sveltekit_138x8s7 = {
-						base: new URL(".", location).pathname.slice(0, -1)
-					};
-
-					const element = document.currentScript.parentElement;
-
-					Promise.all([
-						import("./internal/immutable/entry/start.Dcd4_som.js"),
-						import("./internal/immutable/entry/app.D9whm2VQ.js")
-					]).then(([kit, app]) => {
-						kit.start(app, element, {
-							node_ids: [0, 2],
-							data: [null,null],
-							form: null,
-							error: null
-						});
-					});
-				}
-			</script>
-		</div>
-	</body>
-</html>
+			quae quasi quo saepe tenetur voluptatem voluptates voluptatibus?</p></div></section>`);function S(e){var i=_();u(e,i)}var E=a('<meta name="description" content="portfolio site of ezio4df"/>'),P=a("<!> <!> <!> <!> <!> <!>",1);function T(e){var i=P();b("1uha8ag",p=>{var d=E();q(()=>{v.title="Home"}),u(p,d)});var t=c(i);A(t);var o=s(t,2);x(o);var m=s(o,2);j(m);var r=s(m,2);y(r);var n=s(r,2);D(n);var l=s(n,2);S(l),u(e,i)}export{T as component,O as universal};
