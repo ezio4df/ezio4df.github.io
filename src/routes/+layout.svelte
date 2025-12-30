@@ -4,6 +4,7 @@
 	import './layout.scss'; // Your global styles
 
 	import { onMount, onDestroy } from 'svelte';
+	import Footer from './Footer.svelte';
 
 	// --- Quantum Particle Animation Logic ---
 	let canvasElement: HTMLCanvasElement | null = null;
@@ -213,11 +214,7 @@
 		{@render children()}
 	</main>
 
-	<footer>
-		<p>
-			visit <a href="https://svelte.dev/docs/kit  ">svelte.dev/docs/kit</a> to learn about SvelteKit
-		</p>
-	</footer>
+	<Footer />
 </div>
 
 <style>
@@ -293,26 +290,5 @@
         /* Ensure content is above background layers */
         position: relative;
         z-index: 2; /* Above particles and overlay */
-    }
-
-    footer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 12px;
-        /* Ensure footer is also above background layers */
-        position: relative;
-        z-index: 2; /* Above particles and overlay */
-    }
-
-    footer a {
-        font-weight: bold;
-    }
-
-    @media (min-width: 480px) {
-        footer {
-            padding: 12px 0;
-        }
     }
 </style>
