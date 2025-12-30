@@ -15,8 +15,8 @@
 								<p>Description of the project goes here. This is a brief explanation of what the project does and its
 									key features.</p>
 								<div class="card-buttons">
-									<button class="btn btn-read-more">Read More</button>
 									<button class="btn btn-code">Code</button>
+									<button class="btn btn-read-more">Read More</button>
 								</div>
 							</div>
 						</div>
@@ -96,7 +96,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(to top, rgba(15, 15, 15, 0.95), transparent 60%);
+        background: linear-gradient(to top, rgba(15, 15, 15, 0.95) 50%, transparent 160%);
         display: flex;
         align-items: flex-end;
         opacity: 0;
@@ -110,7 +110,7 @@
     .card-content {
         padding: 1.5rem;
         width: 100%;
-        transform: translateY(20px);
+        transform: translateY(100%);
         transition: transform 0.3s ease;
     }
 
@@ -129,6 +129,8 @@
         margin: 0 0 1rem 0;
         font-size: 0.9rem;
         line-height: 1.4;
+				font-weight: 600;
+				/*text-align: justify;*/
     }
 
     .card-buttons {
@@ -167,14 +169,20 @@
     }
 
     .card-title {
-        background: var(--color-bg-primary);
+        background: var(--color-bg-secondary);
         padding: 1rem;
         text-align: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        transform: translateY(0);
         transition: transform 0.3s ease;
     }
 
     .project-card:hover .card-title {
-        transform: translateY(-100%);
+        transform: translateY(100%);
     }
 
     .card-title h3 {
