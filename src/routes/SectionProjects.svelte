@@ -3,7 +3,7 @@
 
 <section id="projects">
 	<div class="container">
-		<h1>Projects!</h1>
+		<h1>Projects</h1>
 		<div class="projects-grid">
 			{#each [1, 2, 3, 4, 5, 6] as _, i}
 				<div class="project-card">
@@ -27,13 +27,12 @@
 				</div>
 			{/each}
 		</div>
-		<p>Additional content after projects...</p>
 	</div>
 </section>
 
 <style>
     section {
-        padding: var(--navbar-height) 0;
+        padding: var(--navbar-height) 2rem;
         background: rgba(255, 255, 255, 0.4);
         backdrop-filter: blur(12px);
         min-height: 100vh;
@@ -45,12 +44,11 @@
 
     .container {
         max-width: var(--page-max-width);
-        padding: 2rem;
     }
 
     h1 {
         text-align: center;
-        margin-bottom: 2rem;
+        margin: 1rem 0 3rem;
     }
 
     .projects-grid {
@@ -58,7 +56,7 @@
         flex-wrap: wrap;
         justify-content: center;
         gap: 2rem;
-        margin-bottom: 2rem;
+        /*margin-bottom: 2rem;*/
     }
 
     .project-card {
