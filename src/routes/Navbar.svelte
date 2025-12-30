@@ -1,8 +1,6 @@
-<!-- Navbar.svelte -->
-<script>
+<script lang="ts">
 	import { onMount, onDestroy, tick } from 'svelte';
 
-	// Define your sections
 	const sections = [
 		{ id: 'home', label: 'Home' },
 		{ id: 'projects', label: 'Projects' },
@@ -12,11 +10,10 @@
 		{ id: 'contact', label: 'Contact' }
 	];
 
-	let activeSectionId = 'home'; // Default active section
+	let activeSectionId = 'home';
 	let underlineStyle = 'width: 0; left: 0;';
 	let underlineAnimationClass = 'underline-hidden';
 
-	// Function to update the active section based on URL hash
 	function updateActiveSectionFromHash() {
 		const hash = window.location.hash.substring(1);
 		if (sections.some(section => section.id === hash)) {
@@ -25,44 +22,35 @@
 		}
 	}
 
-	// Function to smoothly scroll to a section and update the hash
-	function scrollToSection(sectionId) {
+	function scrollToSection(sectionId: string) {
 		const targetElement = document.getElementById(sectionId);
 		if (targetElement) {
-			// Prevent default behavior of anchor links if using them directly
-			// Use history.pushState to update the hash without triggering popstate immediately
 			history.pushState(null, null, `#${sectionId}`);
 			targetElement.scrollIntoView({ behavior: 'smooth' });
-			// The popstate event listener will handle updating activeSectionId
 		}
 	}
 
-	// Function to update the underline position
-	async function updateUnderlinePosition(targetId) {
-		// Trigger a tick to ensure DOM is updated if needed
+	async function updateUnderlinePosition(targetId: string) {
 		await tick();
 
 		const activeLink = document.querySelector(`a[data-nav-link="${targetId}"]`);
 		if (activeLink) {
 			const linkRect = activeLink.getBoundingClientRect();
-			const navRect = activeLink.closest('nav').getBoundingClientRect();
+			const navRect = activeLink.closest('nav')!.getBoundingClientRect();
 			const left = linkRect.left - navRect.left;
 			const width = linkRect.width;
 
 			underlineStyle = `width: ${width}px; left: ${left}px;`;
 			underlineAnimationClass = 'underline-visible underline-animate';
 		} else {
-			// If link is not found, hide the underline
 			underlineAnimationClass = 'underline-hidden';
 		}
 	}
 
-	// Handle popstate event (when browser back/forward is used or hash changes)
 	function handlePopState() {
 		updateActiveSectionFromHash();
 	}
 
-	// Handle scroll events to potentially update active section based on viewport
 	let ticking = false;
 
 	function handleScroll() {
@@ -76,10 +64,8 @@
 	}
 
 	function updateActiveSectionBasedOnScroll() {
-		// Simple logic: find the first section that is at the top of the viewport
-		// You might want a more sophisticated intersection observer for better UX
-		let currentSection = 'home'; // Default
-		const scrollPosition = window.scrollY + 100; // Add offset
+		let currentSection = 'home';
+		const scrollPosition = window.scrollY + 100;
 
 		for (let i = sections.length - 1; i >= 0; i--) {
 			const sectionId = sections[i].id;
@@ -93,45 +79,37 @@
 		if (currentSection !== activeSectionId) {
 			activeSectionId = currentSection;
 			updateUnderlinePosition(activeSectionId);
-			// Update URL hash if necessary, but avoid triggering popstate immediately
-			// Only update if it's different from the current hash
 			if (window.location.hash.substring(1) !== currentSection) {
 				history.replaceState(null, null, `#${currentSection}`);
 			}
 		}
 	}
 
-
 	onMount(() => {
-		// Initialize based on current hash
+		// Set initial hash to #home if no hash exists
+		if (!window.location.hash) {
+			history.replaceState(null, null, '#home');
+		}
+
 		updateActiveSectionFromHash();
 
-		// Add event listeners
 		window.addEventListener('popstate', handlePopState);
 		window.addEventListener('scroll', handleScroll, { passive: true });
 
-		// Cleanup on unmount
 		onDestroy(() => {
 			window.removeEventListener('popstate', handlePopState);
 			window.removeEventListener('scroll', handleScroll);
 		});
 	});
-
 </script>
 
 <style lang="scss">
-  /* Reference Tailwind CSS theme variables and utilities */
-  @reference 'tailwindcss';
-
   :global(html) {
-    scroll-behavior: smooth; /* Optional: for smooth scrolling */
+    scroll-behavior: smooth;
   }
 
-  /* Spacer element to push content down */
-  .navbar-spacer {
-    height: calc(1.25rem * 2 + 1.5rem + 2px); /* Match the height of the navbar (padding-top + padding-bottom + border-bottom) */
-    width: 100%;
-    display: block; /* Ensure it takes up space */
+  :global(:root) {
+    --navbar-height: calc(0.5rem * 2 + 3rem + 1px);
   }
 
   nav {
@@ -142,9 +120,9 @@
     z-index: 100;
     padding: 0.5rem 0;
     backdrop-filter: blur(12px);
-    background-color: rgba(15, 15, 15, 0.4); /* Semi-transparent dark bg */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
-    transition: background-color 0.3s ease; /* Smooth transition for state changes if needed */
+    background-color: rgba(15, 15, 15, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
 
     .nav-container {
       max-width: 64rem;
@@ -157,62 +135,58 @@
     }
 
     .logo {
-      font-size: 1.125rem; /* Replace text-xl */
-      font-weight: 700; /* Replace font-bold */
-      color: #f3f4f6; /* Replace text-gray-100 (adjust color as needed) */
-      cursor: pointer; /* Replace cursor-pointer */
-      font-family: var(--font-mono); /* Use your defined monospace font */
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #f3f4f6;
+      cursor: pointer;
+      font-family: var(--font-mono);
       transition: color 0.2s ease;
 
       &:hover {
-        color: var(--color-accent-primary, #6366f1); /* Hover effect */
+        color: var(--color-accent-primary, #6366f1);
       }
     }
 
     .nav-links {
-      display: flex; /* Replace flex */
-      gap: 1.5rem; /* Replace space-x-6 (gap handles spacing between items) */
+      display: flex;
+      gap: 1.5rem;
       list-style: none;
       margin: 0;
       padding: 0;
+      position: relative;
 
       li {
-        position: relative; // Needed for underline positioning
+        position: relative;
       }
 
       a {
-        padding: 0.5rem 0.75rem; /* Replace px-3 py-2 */
-        font-size: 0.875rem; /* Replace text-sm */
-        font-weight: 800; /* Replace font-medium */
-        color: #d1d5db; /* Replace text-gray-300 (adjust color as needed) */
-        text-decoration: none; /* Replace no-underline */
-        position: relative; /* For z-index */
-        z-index: 10; /* Replace z-10 */
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+        font-weight: 800;
+        color: #d1d5db;
+        text-decoration: none;
+        position: relative;
+        z-index: 10;
         display: block;
 
-        &[data-nav-link='home'] { /* Example specific style if needed */
-          // ...
-        }
-
         &:hover {
-          color: var(--color-accent-primary, #6366f1); /* Hover effect */
+          color: var(--color-accent-primary, #6366f1);
         }
 
         &.active {
-          color: var(--color-accent-primary, #6366f1); /* Active link color */
+          color: var(--color-accent-primary, #6366f1);
         }
       }
     }
 
-    /* Underline styles */
     .underline {
       position: absolute;
-      bottom: 0.5rem; /* Adjust vertical position */
+      bottom: 0.5rem;
       height: 2px;
       background-color: var(--color-accent-primary, #6366f1);
-      transition: none; /* We control animation via class */
+      transition: none;
       z-index: 0;
-      border-radius: 2px; /* Rounded edges */
+      border-radius: 2px;
 
       &.underline-hidden {
         opacity: 0;
@@ -226,28 +200,14 @@
       }
 
       &.underline-animate {
-        /* Springy animation using cubic-bezier */
-        /* Adjust these values for different "springiness" */
         transition: left 0.4s cubic-bezier(0.22, 0.61, 0.36, 1),
         width 0.4s cubic-bezier(0.22, 0.61, 0.36, 1),
         transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
       }
     }
   }
-
-  /* Optional: Style for when the page is scrolled */
-  /* You might want to add a class to nav based on scroll position */
-  /*
-  nav.scrolled {
-    background-color: rgba(15, 15, 15, 0.9); // More opaque when scrolled
-  }
-  */
 </style>
 
-<!-- Spacer element -->
-<div class="navbar-spacer"></div>
-
-<!-- Actual navbar -->
 <nav>
 	<div class="nav-container">
 		<div class="logo" on:click={() => scrollToSection('home')}>
@@ -266,7 +226,6 @@
 					</a>
 				</li>
 			{/each}
-			<!-- The underline div -->
 			<div class="underline {underlineAnimationClass}" style={underlineStyle}></div>
 		</ul>
 	</div>

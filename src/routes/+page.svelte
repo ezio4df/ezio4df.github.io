@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Hero from './Hero.svelte';
-	import Projects from './Projects.svelte';
+	import SectionHero from './SectionHero.svelte';
+	import SectionProjects from './SectionProjects.svelte';
 </script>
 
 <svelte:head>
@@ -8,8 +8,8 @@
 	<meta name="description" content="portfolio site of ezio4df" />
 </svelte:head>
 
-<Hero />
-<Projects />
+<SectionHero />
+<SectionProjects />
 
 
 

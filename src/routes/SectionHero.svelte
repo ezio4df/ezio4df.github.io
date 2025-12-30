@@ -1,5 +1,4 @@
 <script>
-	import Counter from './Counter.svelte';
 </script>
 
 <section id="home">
@@ -7,7 +6,7 @@
 
 <!--		<h1>Md. Abdul Al-Amin</h1>-->
 		<h1>ezio4df</h1>
-		<h2>Student, ML researcher, Programmer</h2>
+		<h2>Student, AI/ML enthusiast, Programmer</h2>
 
 		<ul class="socials">
 			<li><a href="#">Github</a></li>
@@ -21,6 +20,7 @@
 
 <style>
     section {
+				padding: var(--navbar-height) 0;
         background: transparent;
         height: 100vh;
         min-height: 300px;
