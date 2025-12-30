@@ -1,9 +1,9 @@
 <script>
 </script>
 
-<section id="projects">
+<section id="timeline">
 	<div class="container">
-		<h1>Projects!</h1>
+		<h1>Timeline</h1>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum omnis quos voluptates. Accusantium amet
 			architecto at cum debitis dolores enim eos, eum excepturi explicabo fugiat hic ipsam laudantium libero maxime
 			natus nemo nobis nostrum numquam optio quia ratione rerum sed sequi soluta ut vero voluptatem! Accusamus, ad
@@ -83,12 +83,12 @@
 <style>
     section {
         padding: var(--navbar-height) 0;
-        background: rgba(255, 255, 255, 0.4);
-				backdrop-filter: blur(12px);
+        /*background: rgba(255, 255, 255, 0.4);*/
+				/*backdrop-filter: blur(12px);*/
         min-height: 100vh;
 
 				* {
-						color: var(--color-bg-primary);
+						/*color: var(--color-bg-primary);*/
 				}
 
     }

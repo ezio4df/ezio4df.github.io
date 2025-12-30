@@ -20,16 +20,15 @@
 
 <style>
     section {
-				padding: var(--navbar-height) 0;
         background: transparent;
-        height: 100vh;
-        min-height: 300px;
+        min-height: 100vh;
 
 				display: flex;
 				justify-content: center;
 				align-items: center;
     }
 		.content {
+				padding: var(--navbar-height) 0;
 				text-align: center;
 		}
 		/**************************************************/

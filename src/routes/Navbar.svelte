@@ -128,7 +128,7 @@
     transition: background-color 0.3s ease;
 
     .nav-container {
-      max-width: 64rem;
+      max-width: var(--page-max-width);
       margin: 0 auto;
       padding-left: 1rem;
       padding-right: 1rem;
@@ -196,6 +196,13 @@
       }
     }
   }
+
+	.logo {
+		font-family: var(--font-mono);
+		font-weight: 800;
+		font-style: italic;
+	}
+
 </style>
 
 <nav>

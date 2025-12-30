@@ -1,9 +1,9 @@
 <script>
 </script>
 
-<section id="projects">
+<section id="contact">
 	<div class="container">
-		<h1>Projects!</h1>
+		<h1>Contact</h1>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum omnis quos voluptates. Accusantium amet
 			architecto at cum debitis dolores enim eos, eum excepturi explicabo fugiat hic ipsam laudantium libero maxime
 			natus nemo nobis nostrum numquam optio quia ratione rerum sed sequi soluta ut vero voluptatem! Accusamus, ad
