@@ -6,142 +6,115 @@
 <script lang="ts">
 	// Timeline data
 	const timelineItems = [
-		{
-			id: 12,
-			title: 'Open-Source Contribution',
-			subtitle: 'Collaborative Development',
-			description: 'Contributed documentation improvements and small fixes to an open-source project.',
-			startDate: '2025-06',
-			endDate: null,
-			icon: 'code'
-		},
-		{
-			id: 11,
-			title: 'Podcast Experiment',
-			subtitle: 'Audio Storytelling',
-			description: 'Produced a short podcast series featuring interviews about creative hobbies and side projects.',
-			startDate: '2025-01',
-			endDate: '2025-04',
-			icon: 'microphone-lines'
-		},
-		{
-			id: 10,
-			title: 'Environmental Cleanup',
-			subtitle: 'Community Service',
-			description: 'Joined monthly cleanup events targeting riverbanks and public parks.',
-			startDate: '2024-05',
-			endDate: '2024-10',
-			icon: 'recycle'
-		},
-		{
-			id: 9,
-			title: 'Chess Tournament Series',
-			subtitle: 'Competitive Play',
-			description: 'Participated in multiple local chess tournaments, focusing on improving strategic thinking.',
-			startDate: '2024-03',
-			endDate: '2024-11',
-			icon: 'chess'
-		},
-		{
-			id: 8,
-			title: 'Local History Archive',
-			subtitle: 'Volunteer Research',
-			description: 'Helped digitize and organize historical documents for a neighborhood archive project.',
-			startDate: '2024-02',
-			endDate: '2024-06',
-			icon: 'archive'
-		},
+		// {
+		// 	id: 12,
+		// 	title: 'lorem ipsum',
+		// 	subtitle: 'lorem ipsum',
+		// 	description: 'lorem ipsum',
+		// 	startDate: '2025-06',
+		// 	endDate: null,
+		// 	icon: 'code'
+		// },
 		{
 			id: 7,
-			title: 'Freelance Illustration',
-			subtitle: 'Creative Commissions',
-			description: 'Created digital illustrations for small online clients, focusing on icons and simple character designs.',
-			startDate: '2023-09',
-			endDate: '2023-12',
-			icon: 'pen-ruler'
+			title: 'China Scholastic Competency Assessment (CSCA)',
+			subtitle: 'Academic',
+			description: 'Completed the CSCA exam administered by the China Scholarship Council',
+			startDate: null,
+			endDate: '2025-12',
+			icon: 'school'
 		},
 		{
 			id: 6,
-			title: 'Science Fair Entry',
-			subtitle: 'Experimental Research',
-			description: 'Conducted an experiment on plant growth under different lighting conditions and presented the results.',
-			startDate: '2023-06',
-			endDate: '2023-08',
-			icon: 'flask'
+			title: 'SAT Exam',
+			subtitle: 'Academic',
+			description: 'Achieved a score of 1360 on the SAT taken on October 4, 2025',
+			startDate: null,
+			endDate: '2025-10',
+			icon: 'school'
 		},
 		{
 			id: 5,
-			title: 'Mobile App Prototype',
-			subtitle: 'Personal Tech Experiment',
-			description: 'Designed and prototyped a simple mobile app to track habits and visualize daily progress.',
-			startDate: '2023-01',
-			endDate: '2023-04',
-			icon: 'mobile'
+			title: 'IELTS Exam',
+			subtitle: 'Language',
+			description: 'Achieved an overall band score of 7 on the IELTS Academic test',
+			startDate: null,
+			endDate: '2025-08',
+			icon: 'language'
 		},
 		{
 			id: 4,
-			title: 'Language Immersion',
-			subtitle: 'Self-Directed Study',
-			description: 'Dedicated several months to learning a new language through daily practice and conversation exchanges.',
-			startDate: '2022-12',
-			endDate: '2023-05',
-			icon: 'globe'
+			title: 'Machine Learning Exploration',
+			subtitle: 'Self-Study',
+			description: 'Began learning machine learning basics and experimenting with small projects. Gradually shifted focus away from full-stack web development toward AI, which became the primary technical interest',
+			startDate: '2025-02',
+			endDate: null,
+			icon: 'brain'
 		},
 		{
 			id: 3,
-			title: 'Robotics Club',
-			subtitle: 'Team-Based Engineering',
-			description: 'Worked in a small team to build and program a line-following robot for a regional competition.',
-			startDate: '2022-04',
-			endDate: '2022-10',
-			icon: 'robot'
+			title: 'Higher Secondary School',
+			subtitle: 'Academic',
+			description: 'Completed higher secondary education and obtained the national HSC.',
+			startDate: null,
+			endDate: '2024-12',
+			icon: 'school'
 		},
 		{
 			id: 2,
-			title: 'Short Film Production',
-			subtitle: 'Independent Creative Work',
-			description: 'Planned, filmed, and edited a short narrative film that was screened at a small local showcase.',
-			startDate: '2021-11',
-			endDate: '2022-02',
-			icon: 'film'
+			title: 'Secondary School',
+			subtitle: 'Academic',
+			description: 'Completed secondary school education and obtained the national Secondary School Certificate',
+			startDate: null,
+			endDate: '2022-12',
+			icon: 'school'
 		},
 		{
 			id: 1,
-			title: 'Community Garden Project',
-			subtitle: 'Urban Sustainability Initiative',
-			description: 'Collaborated with local residents to design and maintain a shared garden space promoting sustainable food practices.',
-			startDate: '2021-03',
-			endDate: '2021-09',
-			icon: 'leaf'
+			title: 'Stack Overflow Contributions',
+			subtitle: 'Q&A',
+			description: 'Started by using Stack Overflow to solve coding issues in React, JavaScript, and HTML. Later began answering questions during the early pandemic months, eventually posting 100+ answers and earning ~4k rep',
+			startDate: '2020-01',
+			endDate: '2020-10',
+			icon: 'code'
+		},
+		{
+			id: 0,
+			title: 'Started Programming',
+			subtitle: '',
+			description: 'Started tinkering with HTML and basic scripting in free time as a hobby. Tried PHP for a while, deepened work with JavaScript (frontend and Node.js backend), then added Python. Focused mostly on learning full-stack web projects',
+			startDate: null,
+			endDate: '2017-01',
+			icon: 'code'
 		}
 	];
 
-	// Function to format date
 	function formatDate(dateString: string) {
 		const date = new Date(dateString);
 		return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
 	}
 
-	// Function to calculate duration
-	function calculateDuration(start: string, end: string) {
+	function calculateDuration(start: string, end: string): string | null {
 		if (!end) return null;
 
-		const startDate = new Date(start);
-		const endDate = new Date(end);
+		const [startYear, startMonth] = start.split('-').map(Number);
+		const [endYear, endMonth] = end.split('-').map(Number);
 
-		let years = endDate.getFullYear() - startDate.getFullYear();
-		let months = endDate.getMonth() - startDate.getMonth();
+		// Convert to total months since year 0
+		const startTotalMonths = startYear * 12 + (startMonth - 1);
+		const endTotalMonths = endYear * 12 + (endMonth - 1);
 
-		if (months < 0) {
-			years--;
-			months += 12;
-		}
+		// Add 1 to make it inclusive (Jan to Oct = 10 months, not 9)
+		const totalMonths = endTotalMonths - startTotalMonths + 1;
+
+		const years = Math.floor(totalMonths / 12);
+		const months = totalMonths % 12;
 
 		let result = '';
 		if (years > 0) result += `${years} yr${years > 1 ? 's' : ''} `;
 		if (months > 0) result += `${months} mo${months > 1 ? 's' : ''}`;
 
-		return result.trim();
+		return result.trim() || '1 mo';
 	}
 </script>
 
@@ -161,9 +134,15 @@
 						</div>
 						<!-- Date side (right) -->
 						<div class="timeline-date">
-							{formatDate(item.startDate)} - {item.endDate ? formatDate(item.endDate) : 'Present'}
-							{#if item.endDate}
+							{#if item.startDate && item.endDate}
+								{formatDate(item.startDate)} - {formatDate(item.endDate)}
 								<div class="duration">{calculateDuration(item.startDate, item.endDate)}</div>
+							{:else if item.startDate && !item.endDate}
+								{formatDate(item.startDate)} - Present
+							{:else if !item.startDate && item.endDate}
+								{formatDate(item.endDate)}
+							{:else}
+								<span class="unknown-date">Date not specified</span>
 							{/if}
 						</div>
 					</div>
