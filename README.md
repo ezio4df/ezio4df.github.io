@@ -42,7 +42,8 @@ You can preview the production build with `npm run preview`.
 - [X] initial #home in Navbar component
 - [X] use common navbar padding top via css-variables
 - [ ] add effect on "HeroSection / name" such that when hovered it has particle effect reerranging into my full name
-- [ ] use Icons in HeroSection / Socials
+- [X] use unified logo/icons
+- [X] use Icons in HeroSection / Socials
 - [ ] reduce particles in Background to avoid laggy behaviour in smaller/weaker devices
 - [ ] Add projects section
   - [ ] add icons after code & read-more
@@ -52,7 +53,6 @@ You can preview the production build with `npm run preview`.
   - [ ] add white bg for dark logos
   - [ ] ...
 - [ ] Sticky scrolling experience
-- [ ] use unified logo/icons
 - [ ] mobile / responsive design
 - [ ] change project card design (too simple)
   - [ ] color of card is lame

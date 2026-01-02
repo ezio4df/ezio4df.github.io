@@ -8,8 +8,8 @@
 		{ name: 'PHP', icon: 'php', category: 'Language', proficiency: 2 },
 
 		// ————— AI / ML —————
-		{ name: 'Machine Learning', icon: 'brain', category: 'AI/ML', proficiency: 4 },
-		{ name: 'Deep Learning', icon: 'layer-group', category: 'AI/ML', proficiency: 3 },
+		{ name: 'Machine Learning', icon: 'machine-learning-06-svgrepo-com', category: 'AI/ML', proficiency: 4 },
+		{ name: 'Deep Learning', icon: 'deep-learning-svgrepo-com', category: 'AI/ML', proficiency: 3 },
 		{ name: 'PyTorch', icon: 'pytorch', category: 'AI/ML', proficiency: 3 },
 		{ name: 'Scikit-learn', icon: 'scikitlearn', category: 'AI/ML', proficiency: 3 },
 		{ name: 'Pandas', icon: 'pandas', category: 'AI/ML', proficiency: 4 },
@@ -18,7 +18,7 @@
 		{ name: 'OpenCV', icon: 'opencv', category: 'AI/ML', proficiency: 3 },
 
 		// ————— Data & Scraping —————
-		{ name: 'Data Mining', icon: 'robot', category: 'Data', proficiency: 4 }, // Group Puppeteer + Selenium under this
+		{ name: 'Data Mining', icon: 'data-mining', category: 'Data', proficiency: 4 }, // Group Puppeteer + Selenium under this
 		{ name: 'SQL (mysql + sqlite)', icon: 'mysql', category: 'Data', proficiency: 4 }, // Covers SQLite + MySQL
 		{ name: 'MongoDB', icon: 'mongodb', category: 'Database', proficiency: 2 },
 
@@ -29,13 +29,12 @@
 		{ name: 'Tailwind CSS', icon: 'tailwindcss', category: 'Frontend', proficiency: 2 },
 
 		// ————— Backend & APIs —————
-		{ name: 'Node.js', icon: 'nodejs', category: 'Backend', proficiency: 3 },
 		{ name: 'GraphQL', icon: 'graphql', category: 'Backend', proficiency: 3 }, // Used well, can refresh quickly
 		{ name: 'FastAPI', icon: 'fastapi', category: 'Backend', proficiency: 3 },
 
 		// ————— Tools —————
 		{ name: 'Git', icon: 'git', category: 'Tools', proficiency: 5 },
-		{ name: 'GitHub', icon: 'github', category: 'Tools', proficiency: 4 },
+		// { name: 'GitHub', icon: 'github', category: 'Tools', proficiency: 4 },
 		{ name: 'Docker', icon: 'docker', category: 'DevOps', proficiency: 3 }, // Include if you’ve containerized *anything*
 		{ name: 'Bash', icon: 'bash', category: 'Tools', proficiency: 2 }, // Represents shell scripting
 		{ name: 'LaTeX', icon: 'latex', category: 'Tools', proficiency: 3 } // Valuable for research
@@ -127,7 +126,7 @@
 							/>
 						</svg>
 						<img
-							src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${skill.icon}/${skill.icon}-original.svg`}
+							src={`/skills/${skill.icon}.svg`}
 							alt={skill.name}
 							class="skill-icon"
 						/>

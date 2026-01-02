@@ -109,7 +109,7 @@
 <nav>
 	<div class="nav-container">
 		<div class="logo" on:click={() => scrollToSection('home')}>
-			ezio4df (🚧 WorkInProgress 🚧)
+			ezio4df
 		</div>
 		<ul class="nav-links">
 			{#each sections as section (section.id)}

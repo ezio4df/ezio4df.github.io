@@ -1,10 +1,8 @@
-<svelte:head>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</svelte:head>
-
-
 <script lang="ts">
 	// Timeline data
+	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
+	import { faBrain, faCode, faLanguage, faSchool } from '@fortawesome/free-solid-svg-icons';
+
 	const timelineItems = [
 		// {
 		// 	id: 12,
@@ -22,7 +20,7 @@
 			description: 'Completed the CSCA exam administered by the China Scholarship Council',
 			startDate: null,
 			endDate: '2025-12',
-			icon: 'school'
+			icon: faSchool
 		},
 		{
 			id: 6,
@@ -31,7 +29,7 @@
 			description: 'Achieved a score of 1360 on the SAT taken on October 4, 2025',
 			startDate: null,
 			endDate: '2025-10',
-			icon: 'school'
+			icon: faSchool
 		},
 		{
 			id: 5,
@@ -40,7 +38,7 @@
 			description: 'Achieved an overall band score of 7 on the IELTS Academic test',
 			startDate: null,
 			endDate: '2025-08',
-			icon: 'language'
+			icon: faLanguage
 		},
 		{
 			id: 4,
@@ -49,7 +47,7 @@
 			description: 'Began learning machine learning basics and experimenting with small projects. Gradually shifted focus away from full-stack web development toward AI, which became the primary technical interest',
 			startDate: '2025-02',
 			endDate: null,
-			icon: 'brain'
+			icon: faBrain
 		},
 		{
 			id: 3,
@@ -58,7 +56,7 @@
 			description: 'Completed higher secondary education and obtained the national HSC.',
 			startDate: null,
 			endDate: '2024-12',
-			icon: 'school'
+			icon: faSchool
 		},
 		{
 			id: 2,
@@ -67,7 +65,7 @@
 			description: 'Completed secondary school education and obtained the national Secondary School Certificate',
 			startDate: null,
 			endDate: '2022-12',
-			icon: 'school'
+			icon: faSchool
 		},
 		{
 			id: 1,
@@ -76,16 +74,16 @@
 			description: 'Started by using Stack Overflow to solve coding issues in React, JavaScript, and HTML. Later began answering questions during the early pandemic months, eventually posting 100+ answers and earning ~4k rep',
 			startDate: '2020-01',
 			endDate: '2020-10',
-			icon: 'code'
+			icon: faCode
 		},
 		{
 			id: 0,
 			title: 'Started Programming',
-			subtitle: '',
+			subtitle: 'Self-Study',
 			description: 'Started tinkering with HTML and basic scripting in free time as a hobby. Tried PHP for a while, deepened work with JavaScript (frontend and Node.js backend), then added Python. Focused mostly on learning full-stack web projects',
 			startDate: null,
 			endDate: '2017-01',
-			icon: 'code'
+			icon: faCode
 		}
 	];
 
@@ -147,7 +145,7 @@
 						</div>
 					</div>
 					<div class="timeline-marker">
-						<i class="{`fa-solid fa-${item.icon}`}"></i>
+						<FontAwesomeIcon class="timeline-marker-icon" icon={item.icon} size="xl" />
 					</div>
 				</div>
 			{/each}
@@ -316,10 +314,8 @@
       left: 0%;
     }
 
-    i {
-      color: var(--color-bg-primary);
-      font-size: 1.3rem;
-    }
+		color: var(--color-bg-tertiary);
+
   }
 
 

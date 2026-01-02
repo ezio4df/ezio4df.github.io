@@ -3,6 +3,16 @@
 	import Navbar from './Navbar.svelte';
 	import './layout.scss'; // Your global styles
 
+	// =/ FontAwesome
+	// src/lib/fontawesome.ts (or directly in +layout.svelte)
+	import { library } from '@fortawesome/fontawesome-svg-core';
+	import { faGithub, faKaggle, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
+	import { faHeart, faCog, faAt, faSchool, faLanguage, faBrain, faCode } from '@fortawesome/free-solid-svg-icons';
+
+	// Add only the icons you plan to use
+	library.add(faGithub, faKaggle, faStackOverflow, faHeart, faCog, faAt, faSchool, faLanguage, faBrain, faCode);
+	// /= FontAwesome
+
 	import { onMount, onDestroy } from 'svelte';
 	import Footer from './Footer.svelte';
 
