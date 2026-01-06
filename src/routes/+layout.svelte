@@ -239,7 +239,8 @@
         pointer-events: none; /* Allow clicks to pass through to content */
 
         /* Apply the background image here */
-        background-image: url('/pexels-life-of-pix-7919.jpg'); /* Update path */
+				background-color: rgba(50, 170, 226, 0.7);
+        background-image: url('/pexels-life-of-pix-7919.jpg');
         background-size: cover;
         background-position: center;
         background-attachment: fixed; /* Optional: for parallax effect */
