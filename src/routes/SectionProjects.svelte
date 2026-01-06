@@ -40,10 +40,10 @@
 		},
 		{
 			id: 4,
-			title: 'Cart Pole using Cross-Entropy',
-			description: 'Trained a Deep Q-Network (DQN) agent to play Snake using a custom Gymnasium-compatible environment. Focused on state representation, reward design, and experience replay for a partially observable grid world.',
+			title: 'Policy Gradient Agent for CartPole',
+			description: 'Implemented a cross-entropy policy gradient agent to solve the CartPole-v1 environment using Gymnasium and PyTorch. Extended the task by training and evaluating the agent under randomized initial pole angles and positions to improve robustness and generalization.',
 			image: imgCartPole,
-			tech: ['Python', 'PyTorch', 'Gymnasium', 'Jupyter'],
+			tech: ['Python', 'PyTorch', 'Gymnasium', 'Jupyter', 'Matplotlib'],
 			links: {
 				code: 'https://github.com/ezio4df/book-DeepRL-MaximLapan/blob/main/Bk-DeepRLHandsOn-MaximLapan/Ch02-02b.ipynb',
 				readMore: null
