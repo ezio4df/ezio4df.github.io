@@ -1,35 +1,39 @@
 <script>
+	import imgTicTacToe from '$lib/images/projects/tictactoe/tictactoe-agent-as-x.gif';
+	import imgFrozenLake from '$lib/images/projects/frozenlake/frozenlake_8x8-episode-0.gif';
+	import imgSnake from '$lib/images/projects/snake/snake_5x5_eval-01.gif';
+
 	const projects = [
 		{
 			id: 2,
 			title: 'DQN Agent for Tic-Tac-Toe',
 			description: 'Trained a Deep Q-Network (DQN) agent to play Tic-Tac-Toe using a custom Gymnasium-compatible environment. Explored self-play and reward shaping to enable learning in a deterministic, small-state game.',
-			image: '/projects/tictactoe/tictactoe-agent-as-x.gif',
+			image: imgTicTacToe,
 			tech: ['Python', 'PyTorch', 'Gymnasium', 'Jupyter'],
 			links: {
 				code: 'https://github.com/yourusername/tictactoe-dqn',
-				readMore: '/projects/tictactoe' // internal route or external URL
+				readMore: '/projects/tictactoe'
 			}
 		},
 		{
 			id: 1,
 			title: 'Deep Q-Learning on FrozenLake',
 			description: 'Implemented Deep Q-Network (DQN) to solve the FrozenLake environment (4x4 and 8x8) using Gymnasium. Experimented with neural network sizes, map layouts, and hyperparameters to study reinforcement learning stability and convergence.',
-			image: '/projects/frozenlake/frozenlake_8x8-episode-0.gif',
+			image: imgFrozenLake,
 			tech: ['Python', 'PyTorch', 'Gymnasium', 'Jupyter'],
 			links: {
 				code: 'https://github.com/yourusername/frozenlake-dqn',
-				readMore: null // won't show "Read More" button
+				readMore: null
 			}
 		},
 		{
 			id: 3,
 			title: 'DQN Agent for Snake',
 			description: 'Trained a Deep Q-Network (DQN) agent to play Snake using a custom Gymnasium-compatible environment. Focused on state representation, reward design, and experience replay for a partially observable grid world.',
-			image: '/projects/snake/snake_5x5_eval-01.gif',
+			image: imgSnake,
 			tech: ['Python', 'PyTorch', 'Gymnasium', 'Jupyter'],
 			links: {
-				code: null, // no code link
+				code: null,
 				readMore: '/projects/snake'
 			}
 		}

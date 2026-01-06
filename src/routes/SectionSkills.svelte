@@ -1,43 +1,71 @@
 <script lang="ts">
+	import imgPython from "$lib/images/skills/python.svg"
+	import imgJS from "$lib/images/skills/javascript.svg"
+	import imgNodeJS from "$lib/images/skills/nodejs.svg"
+	import imgTypeScript from "$lib/images/skills/typescript.svg"
+	import imgPHP from "$lib/images/skills/php.svg"
+	import imgML from "$lib/images/skills/machine-learning-06-svgrepo-com.svg"
+	import imgDL from "$lib/images/skills/deep-learning-svgrepo-com.svg"
+	import imgPyTorch from "$lib/images/skills/pytorch.svg"
+	import imgSklearn from "$lib/images/skills/scikitlearn.svg"
+	import imgPandas from "$lib/images/skills/pandas.svg"
+	import imgNumpy from "$lib/images/skills/numpy.svg"
+	import imgMatplotlib from "$lib/images/skills/matplotlib.svg"
+	import imgOpenCV from "$lib/images/skills/opencv.svg"
+	import imgDataMining from "$lib/images/skills/data-mining.svg"
+	import imgMySQL from "$lib/images/skills/mysql.svg"
+	import imgMongoDB from "$lib/images/skills/mongodb.svg"
+	import imgReact from "$lib/images/skills/react.svg"
+	import imgNextJS from "$lib/images/skills/nextjs.svg"
+	import imgSass from "$lib/images/skills/sass.svg"
+	import imgTailwindCSS from "$lib/images/skills/tailwindcss.svg"
+	import imgGraphql from "$lib/images/skills/graphql.svg"
+	import imgFastAPI from "$lib/images/skills/fastapi.svg"
+	import imgGit from "$lib/images/skills/git.svg"
+	import imgDocker from "$lib/images/skills/docker.svg"
+	import imgBash from "$lib/images/skills/bash.svg"
+	import imgLatex from "$lib/images/skills/latex.svg"
+
+
 	const skills = [
 		// ————— Core Languages —————
-		{ name: 'Python', icon: 'python', category: 'Language', proficiency: 5 },
-		{ name: 'JavaScript', icon: 'javascript', category: 'Language', proficiency: 4 },
-		{ name: 'NodeJS', icon: 'nodejs', category: 'Language', proficiency: 4 },
-		{ name: 'TypeScript', icon: 'typescript', category: 'Language', proficiency: 4 }, // You said it's a strong point
-		{ name: 'PHP', icon: 'php', category: 'Language', proficiency: 2 },
+		{ name: 'Python', icon: imgPython, category: 'Language', proficiency: 5 },
+		{ name: 'JavaScript', icon: imgJS, category: 'Language', proficiency: 4 },
+		{ name: 'NodeJS', icon: imgNodeJS, category: 'Language', proficiency: 4 },
+		{ name: 'TypeScript', icon: imgTypeScript, category: 'Language', proficiency: 4 },
+		{ name: 'PHP', icon: imgPHP, category: 'Language', proficiency: 2 },
 
 		// ————— AI / ML —————
-		{ name: 'Machine Learning', icon: 'machine-learning-06-svgrepo-com', category: 'AI/ML', proficiency: 4 },
-		{ name: 'Deep Learning', icon: 'deep-learning-svgrepo-com', category: 'AI/ML', proficiency: 3 },
-		{ name: 'PyTorch', icon: 'pytorch', category: 'AI/ML', proficiency: 3 },
-		{ name: 'Scikit-learn', icon: 'scikitlearn', category: 'AI/ML', proficiency: 3 },
-		{ name: 'Pandas', icon: 'pandas', category: 'AI/ML', proficiency: 4 },
-		{ name: 'NumPy', icon: 'numpy', category: 'AI/ML', proficiency: 4 },
-		{ name: 'Matplotlib', icon: 'matplotlib', category: 'AI/ML', proficiency: 2 },
-		{ name: 'OpenCV', icon: 'opencv', category: 'AI/ML', proficiency: 3 },
+		{ name: 'Machine Learning', icon: imgML, category: 'AI/ML', proficiency: 4 },
+		{ name: 'Deep Learning', icon: imgDL, category: 'AI/ML', proficiency: 3 },
+		{ name: 'PyTorch', icon: imgPyTorch, category: 'AI/ML', proficiency: 3 },
+		{ name: 'Scikit-learn', icon: imgSklearn, category: 'AI/ML', proficiency: 3 },
+		{ name: 'Pandas', icon: imgPandas, category: 'AI/ML', proficiency: 4 },
+		{ name: 'NumPy', icon: imgNumpy, category: 'AI/ML', proficiency: 4 },
+		{ name: 'Matplotlib', icon: imgMatplotlib, category: 'AI/ML', proficiency: 2 },
+		{ name: 'OpenCV', icon: imgOpenCV, category: 'AI/ML', proficiency: 3 },
 
 		// ————— Data & Scraping —————
-		{ name: 'Data Mining', icon: 'data-mining', category: 'Data', proficiency: 4 }, // Group Puppeteer + Selenium under this
-		{ name: 'SQL (mysql + sqlite)', icon: 'mysql', category: 'Data', proficiency: 4 }, // Covers SQLite + MySQL
-		{ name: 'MongoDB', icon: 'mongodb', category: 'Database', proficiency: 2 },
+		{ name: 'Data Mining', icon: imgDataMining, category: 'Data', proficiency: 4 },
+		{ name: 'SQL (mysql + sqlite)', icon: imgMySQL, category: 'Data', proficiency: 4 },
+		{ name: 'MongoDB', icon: imgMongoDB, category: 'Database', proficiency: 2 },
 
 		// ————— Frontend —————
-		{ name: 'React', icon: 'react', category: 'Frontend', proficiency: 4 },
-		{ name: 'Next.js', icon: 'nextjs', category: 'Frontend', proficiency: 3 }, // Rusty but deep past experience → Level 3
-		{ name: 'Sass', icon: 'sass', category: 'Frontend', proficiency: 4 }, // You said "strongly known"
-		{ name: 'Tailwind CSS', icon: 'tailwindcss', category: 'Frontend', proficiency: 2 },
+		{ name: 'React', icon: imgReact, category: 'Frontend', proficiency: 4 },
+		{ name: 'Next.js', icon: imgNextJS, category: 'Frontend', proficiency: 3 },
+		{ name: 'Sass', icon: imgSass, category: 'Frontend', proficiency: 4 },
+		{ name: 'Tailwind CSS', icon: imgTailwindCSS, category: 'Frontend', proficiency: 2 },
 
 		// ————— Backend & APIs —————
-		{ name: 'GraphQL', icon: 'graphql', category: 'Backend', proficiency: 3 }, // Used well, can refresh quickly
-		{ name: 'FastAPI', icon: 'fastapi', category: 'Backend', proficiency: 3 },
+		{ name: 'GraphQL', icon: imgGraphql, category: 'Backend', proficiency: 3 },
+		{ name: 'FastAPI', icon: imgFastAPI, category: 'Backend', proficiency: 3 },
 
 		// ————— Tools —————
-		{ name: 'Git', icon: 'git', category: 'Tools', proficiency: 5 },
+		{ name: 'Git', icon: imgGit, category: 'Tools', proficiency: 5 },
 		// { name: 'GitHub', icon: 'github', category: 'Tools', proficiency: 4 },
-		{ name: 'Docker', icon: 'docker', category: 'DevOps', proficiency: 3 }, // Include if you’ve containerized *anything*
-		{ name: 'Bash', icon: 'bash', category: 'Tools', proficiency: 2 }, // Represents shell scripting
-		{ name: 'LaTeX', icon: 'latex', category: 'Tools', proficiency: 3 } // Valuable for research
+		{ name: 'Docker', icon: imgDocker, category: 'DevOps', proficiency: 3 },
+		{ name: 'Bash', icon: imgBash, category: 'Tools', proficiency: 2 },
+		{ name: 'LaTeX', icon: imgLatex, category: 'Tools', proficiency: 3 }
 	];
 
 	function getSegmentColor(proficiency: number, segmentIndex: number) {
@@ -126,7 +154,7 @@
 							/>
 						</svg>
 						<img
-							src={`/skills/${skill.icon}.svg`}
+							src={skill.icon}
 							alt={skill.name}
 							class="skill-icon"
 						/>
