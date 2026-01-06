@@ -2,6 +2,7 @@
 	import imgTicTacToe from '$lib/images/projects/tictactoe/tictactoe-agent-as-x.gif';
 	import imgFrozenLake from '$lib/images/projects/frozenlake/frozenlake_8x8-episode-0.gif';
 	import imgSnake from '$lib/images/projects/snake/snake_5x5_eval-01.gif';
+	import imgCartPole from '$lib/images/projects/cartpole/cartpole_trained_agent-2.gif';
 
 	const projects = [
 		{
@@ -11,8 +12,8 @@
 			image: imgTicTacToe,
 			tech: ['Python', 'PyTorch', 'Gymnasium', 'Jupyter'],
 			links: {
-				code: 'https://github.com/yourusername/tictactoe-dqn',
-				readMore: '/projects/tictactoe'
+				code: 'https://github.com/ezio4df/play-TicTacToe/blob/main/01.ipynb',
+				readMore: null
 			}
 		},
 		{
@@ -22,7 +23,7 @@
 			image: imgFrozenLake,
 			tech: ['Python', 'PyTorch', 'Gymnasium', 'Jupyter'],
 			links: {
-				code: 'https://github.com/yourusername/frozenlake-dqn',
+				code: 'https://github.com/ezio4df/play-FrozenLake/tree/main',
 				readMore: null
 			}
 		},
@@ -33,8 +34,19 @@
 			image: imgSnake,
 			tech: ['Python', 'PyTorch', 'Gymnasium', 'Jupyter'],
 			links: {
-				code: null,
-				readMore: '/projects/snake'
+				code: 'https://github.com/ezio4df/play-Snake/tree/main',
+				readMore: null
+			}
+		},
+		{
+			id: 4,
+			title: 'Cart Pole using Cross-Entropy',
+			description: 'Trained a Deep Q-Network (DQN) agent to play Snake using a custom Gymnasium-compatible environment. Focused on state representation, reward design, and experience replay for a partially observable grid world.',
+			image: imgCartPole,
+			tech: ['Python', 'PyTorch', 'Gymnasium', 'Jupyter'],
+			links: {
+				code: 'https://github.com/ezio4df/book-DeepRL-MaximLapan/blob/main/Bk-DeepRLHandsOn-MaximLapan/Ch02-02b.ipynb',
+				readMore: null
 			}
 		}
 	];
