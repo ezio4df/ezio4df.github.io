@@ -18,7 +18,7 @@
 			title: 'Deep Learning Specialization',
 			subtitle: 'DeepLearning.AI · Andrew Ng',
 			description: 'Currently pursuing the Deep Learning Specialization',
-			startDate: '2025-03',
+			startDate: '2026-02',
 			endDate: null,
 			icon: faBrain
 		},
