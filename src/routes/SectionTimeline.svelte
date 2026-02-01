@@ -14,6 +14,24 @@
 		// 	icon: 'code'
 		// },
 		{
+			id: 13,
+			title: 'Deep Learning Specialization',
+			subtitle: 'DeepLearning.AI · Andrew Ng',
+			description: 'Currently pursuing the Deep Learning Specialization',
+			startDate: '2025-03',
+			endDate: null,
+			icon: faBrain
+		},
+		{
+			id: 12,
+			title: 'Machine Learning Specialization',
+			subtitle: 'DeepLearning.AI · Andrew Ng',
+			description: '<a href="https://learn.deeplearning.ai/certificates/5f6e0cc3-4a00-4b47-84a2-857cd708d8c1">Completed the Course</a>. Covered supervised and unsupervised learning, regression, classification, neural networks, and best practices for applied machine learning.',
+			startDate: '2025-12',
+			endDate: '2026-01',
+			icon: faBrain
+		},
+		{
 			id: 7,
 			title: 'China Scholastic Competency Assessment (CSCA)',
 			subtitle: 'Academic',
@@ -127,7 +145,7 @@
 						<!-- Details side (left) -->
 						<div class="timeline-card">
 							<h3>{item.title}</h3>
-							<h4>{item.subtitle}</h4>
+							<h4>{@html item.subtitle}</h4>
 							<p>{@html item.description}</p>
 						</div>
 						<!-- Date side (right) -->
@@ -314,7 +332,7 @@
       left: 0%;
     }
 
-		color: var(--color-bg-tertiary);
+    color: var(--color-bg-tertiary);
 
   }
 
